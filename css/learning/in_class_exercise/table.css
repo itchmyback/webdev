@@ -1,0 +1,31 @@
+#table_0 {
+    table-layout: fixed;
+    width: 10px;
+}
+#table_0 td {
+    width: 200px;
+    font-size: 20px;
+    background-color: orange;
+}
+.content {
+    height: 100px;
+    width: 100px;
+    padding: 10px;
+    margin: 10px;
+    border-color: black;
+    border-style: solid;
+    border-width: 10px;
+    text-align: center;
+}
+#content_0 {
+    background: blue;
+}
+#content_1 {
+    background: red;
+}
+#content_2 {
+    background: green;
+}
+#content_3 {
+    background: yellow;
+}

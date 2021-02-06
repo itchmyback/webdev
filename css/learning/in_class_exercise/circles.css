@@ -1,0 +1,57 @@
+#table_0 {
+    table-layout: fixed;
+    width: 10px;
+}
+#table_0 td {
+    /* 
+    does td width override the table width? 
+    table und, td = 200 => 2 inches, small white gap
+    table width = 2000, td = 200 => 5 inches, small white gap
+    table width = 2000, td = 100 => no change vs td = 200
+    table width = 2000, td und, p = 200 => huge white gap from td size, area of p text is about 2 inches
+    table width = 2000, td 800, p = 200 => td increases, apparently beyond 2000 total?
+    table width und, td 800, p = 200 => td shrinks to a little over 200
+    table width 10, td 800, p = 200 => back to td size 800, implying the table width needs to be initialized
+    */
+    /*
+    table width = 80, td width = 4 x25, yet the table still adjusts?
+    that's because the td dimensions are for the object, not the cell
+    */
+    width: 80px;
+    color:white;
+    text-align: center;
+    font-size: 20px;
+    background-color: black;
+}
+.button {
+    /* font-size: large; */
+    height: 125px;
+    width: 125px;
+    /*
+    width: 700px;
+    color: white;
+    text-align: center;
+    font-size: 60px;
+    */
+    padding: 10px;
+    margin: 5px;
+    border-color: black;
+    border-style: solid;
+    border-width: 3px;
+    /* border-radius: 50% this will make a circle */
+    border-radius: 50%;
+    /* new in class learning, non table method */
+    float: left;
+}
+#button_0 {
+    background: blue;
+}
+#button_1 {
+    background: red;
+}
+#button_2 {
+    background: green;
+}
+#button_3 {
+    background: yellow;
+}

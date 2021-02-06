@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <!--
+        <script src="" async defer></script>
+        -->
+        <h1>Hotel Room Service</h1>
+        <h2>Welcome to our hotel! We hope you enjoy your stay.</h2>
+        <p>We value you as our guest! Use this online form to have a hot, delicious breakfast delivered to your room. Please fill out this form before midnight so that we can make proper accomodations. All meals are served before 10AM. Tipping is encouraged.</p>
+        
+        <!-- form tag allows input to be sent -->
+        <form>
+            <!-- ### Guest Data -->    
+            <!-- table does not achieve desired border effect -->
+            <!--
+            <table border ="1" style="width:100%">
+                <tr>
+                    <td><label for="fname">First Name:</label> <input type="text" name="fname"></td>
+                </tr>
+                <tr>
+                    <td><label for="lname">Last Name:</label> <input type="text" name="lname"></td>
+                </tr>
+                <tr>
+                    <td><label for="room">Room number:</label> <input type="text" name="room"></td>
+                </tr>
+            </table> 
+            -->
+            <!-- field set adds around form data -->
+            <fieldset name="guest"><legend>Hotel Guest Contact Info</legend>
+                <label for="fname">First Name:</label> <input type="text" name="fname">
+                <label for="lname">Last Name:</label> <input type="text" name="lname">
+                <label for="room">Room number:</label> <input type="text" name="room">
+            </fieldset>
+            <p></p>
+            <!-- ### Serving Time -->
+            <!-- datalist also allows user to enter in custom value, don't want that -->
+            <!-- <p>What time would you like to be served? -->
+                <!--
+                <input list="time" placeholder="6AM">
+                <datalist id="time">
+                    <option value="6AM">
+                    <option value="7AM">
+                    <option value="8AM">
+                    <option value="9AM">
+                    <option value="10AM">
+                </datalist></p>
+            -->
+            <!-- select drop down has defined options, want this -->
+            <label for="time">What time would you like to be served?</label>
+            <select name="time" id="time" required>
+                <option value="6AM">6AM</option>
+                <option value="7AM">7AM</option>
+                <option value="8AM">8AM</option>
+                <option value="9AM">9AM</option>
+                <option value="10AM">10AM</option>
+            </select> 
+            <!-- ### Entree Selection -->
+            <p><label for="entree">Please choose your entree:</label></p>
+            <select name="entree" id="entree" size=5 required>
+                <option value="1">Waffles and chicken</option>
+                <option value="2">Pancakes and syrup</option>
+                <option value="3">Hash browns</option>
+                <option value="4">Bacon & Eggs</option>
+                <option value="5">Boring ol' toast</option>
+            </select>
+            <!-- ### Butter -->
+            <p>Would you like extra butter?</p>
+            <!-- radio input attribute "checked" means default selection-->
+            <input type="radio" name="butter" value="yes" checked> <label for="yes">Yes</label>
+            <input type="radio" name="butter" value="no"> <label for="no">No</label>
+            <input type="radio" name="butter" value="surprise"> <label for="surprise">Surprise Me</label>
+            <br>
+            <p></p>
+            <!-- ### Submit -->
+            <input type="submit">
+        </form>
+    </body>
+</html>

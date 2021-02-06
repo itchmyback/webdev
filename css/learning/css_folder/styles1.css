@@ -1,0 +1,40 @@
+body {
+   background: white;
+}
+
+/* color is for the text, background highlights the text */
+
+/* # id */
+/* can't have a space between # and id */
+#burger {
+   color: orange;
+}
+
+#fries {
+   color: green;
+}
+
+#coke {
+   color: red;
+}
+
+/* . class */
+.noodles {
+   background:wheat;
+}
+
+.vegetable {
+   background: yellowgreen;
+}
+
+/* paragraph */
+/* margins seem to overlap */
+p {
+   background: blue;
+   padding: 10px;
+   margin: 5px;
+   border-color: black;
+   border-style: solid;
+   border-width: 3px;
+   border-radius: 25px;
+}
