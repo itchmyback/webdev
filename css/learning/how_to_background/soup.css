@@ -1,0 +1,58 @@
+/* lesson learned */
+/* block element takes as much room as it possibly can 
+div is a block element
+*/
+
+/* inline element takes up only the space it needs 
+an img is an inline element
+span is an inline element, but can't use it in place of div
+*/
+/* This is why selecting for an img for style works better for this case,
+while selecting for a div element containing an img makes it too big.
+*/
+.soup {
+    /* this has a ton of white space, but a selector img does not */
+    /* so don't manually size anything */
+    /* height: 500px; */
+    /* width: 500px; */
+    position: relative;
+    border: 5px solid green;
+
+}
+
+.bar {
+    color: white;
+    background: rgba(80, 80, 80, 0.9);
+    height: 100px;
+    width: 580px;
+    opacity: 0.5;
+    position: absolute;
+    bottom: 0;
+}
+
+body {
+    font-family: Roboto;
+}
+
+img {
+    width: 50%;
+    /* border: 5px solid green; */
+}
+
+.container {
+    /* border: 5px solid green; */
+    /* margin: auto; */
+    position: relative;
+}
+
+.text {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    /* this doesn't work overflow: hidden; */
+    /* this will take padding into account so it doesn't spill over */
+    color: white;
+    width: 100%;
+    padding: 20px;
+    /* box-sizing:border-box; */
+}

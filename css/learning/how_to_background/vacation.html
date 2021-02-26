@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="vacation.css">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="bkg">
+            <!-- id for an image -->
+            <img id="vacay" src="vacation.jpg" alt="vacation">
+        <!--
+        <div id="bkg_jon">
+        -->
+
+            <!-- he did not use div inside div method, so let's take form outside -->
+            <!-- but when i look back at his code, he put the form inside the div -->
+            <!-- so why did I say that? he used a form inside a div method -->
+            <!-- 
+                so things aren't working but it's probably bc I have the form outside the div
+                let's move form inside the div
+                also, formcontainer is an id selector, let's change it to class
+                so, formcontainer not being style shows up
+                if formcontainer is selected, then it disappears
+                is this because of the image?
+                yes - if background image is styled like Jon's, it works
+                basically if image is defined in html vs css
+                BUT WHY
+                it's because styling the div is not the same as styling the image
+                let's test
+                still doesn't look right, but the results are interesting
+                if the div background is 50% and the image is 100%, we get a small
+                background image with our input box below
+                however, there is still the issue that the html defined image comes on top of the input form
+            -->
+
+            <!-- this should be a form, oops! -->
+            <!--
+            <div id="userinput">
+            -->
+            <!--
+                <form id="formcontainer">
+            -->
+                <form class="formcontainer">
+                    <h1>Register Now To Win!</h1>
+                    <!-- let's make type = email instead of text
+                         and also use lable instead of floating p
+                    -->
+                    <label for="email">Your Email:</label>
+                    <input type="email" placeholder="Enter Your Email" name="email">
+                    <!--
+                    <p><strong>Your Password:</strong></p><input type="text" placeholder="Enter Your Password" name="password">
+                    -->
+                    <label for="password">Your Password:</label>
+                    <input type="password" placeholder="Enter Your Password" name="password">
+                    <!-- don't make the button a div, can't control the button then -->
+                    <button class="thebutton">Sign Up</button>
+                </form>
+        </div>
+        
+        <script src="" async defer></script>
+    </body>
+</html>
