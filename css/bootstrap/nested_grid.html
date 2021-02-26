@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+        <!-- custom CSS -->
+        <link rel="stylesheet" href="grid.css">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <!-- bootstrap grid needs to be inside a container class and row class -->
+        <!-- adding inline styles for sake of ease -->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6" style="background: blue; height: 90px;">
+                <!-- nesting 12 columns inside blue row -->
+                <!-- not working, pink and yellow not overlapping blue -->
+                <!-- oops, pink and yellow were not actually inside the blue div -->
+                    <div class="row">
+                        <div class="col-lg-6" style="background: pink; height: 60px;"></div>
+                        <div class="col-lg-6" style="background: yellow; height: 60px;"></div>
+                    </div>
+                </div>
+                <div class="col-lg-6" style="background: red; height: 90px;"></div>
+            </div>
+            <!-- offset attribute, will push them apart ie offset-->
+            <div class="row">
+                <div class="col-lg-4" style="background: red; height: 90px;"></div>
+                <div class="col-lg-4 offset-lg-4" style="background: blue; height: 90px;"></div>
+            </div>
+            <!-- note here the offset causes the total of blue row to be 9, it will push it down to the next row -->
+            <div class="row">
+                <div class="col-lg-6" style="background: red; height: 90px;"></div>
+                <div class="col-lg-6 offset-lg-3" style="background: blue; height: 90px;"></div>
+            </div>
+        </div>
+
+        
+        <script src="" async defer></script>
+    </body>
+</html>

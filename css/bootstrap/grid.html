@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+        <!-- custom CSS -->
+        <link rel="stylesheet" href="grid.css">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <!-- bootstrap grid needs to be inside a container class and row class -->
+        <!--
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6"></div>
+                <div class="col-lg-6"></div>
+            </div>
+        </div>
+        -->
+        <!-- adding inline styles for sake of ease -->
+        <!-- I am not getting what the instructor is getting, my divs are stacking instead of side by side -->
+        <!-- I'm probably missing bootstrap -->
+        <!-- yes, I was missing the CSS bootstrap line in the head -->
+        <!--
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6" style="background: red; height: 90px;"></div>
+                <div class="col-lg-6" style="background: green; height: 90px;"></div>
+            </div>
+        </div>
+        -->
+        <!--
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8" style="background: red; height: 90px;"></div>
+                <div class="col-lg-4" style="background: green; height: 90px;"></div>
+            </div>
+        </div>
+        -->
+        <!--
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2" style="background: red; height: 90px;"></div>
+                <div class="col-lg-8" style="background: green; height: 90px;"></div>
+                <div class="col-lg-2" style="background: red; height: 90px;"></div>
+            </div>
+        </div>
+        -->
+        <!--
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2" style="background: red; height: 290px;"></div>
+                <div class="col-lg-8" style="background: green; height: 290px;"></div>
+                <div class="col-lg-2" style="background: red; height: 290px;"></div>
+            </div>
+            <div class="row">
+                <div class="col-lg-2" style="background: green; height: 290px;"></div>
+                <div class="col-lg-8" style="background: red; height: 290px;"></div>
+                <div class="col-lg-2" style="background: green; height: 290px;"></div>
+            </div>
+        </div>
+        -->
+
+        <!-- if we shrink screen, then columns will start to stack -->
+        <!-- to avoid this, we define classes for small screen -->
+        <!-- as a shortcut, the col-lg could be deleted because col works for size and above, but only if the ratios are the same -->
+        <!--
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2 col-sm-2" style="background: red; height: 290px;"></div>
+                <div class="col-lg-8 col-sm-8" style="background: green; height: 290px;"></div>
+                <div class="col-lg-2 col-sm-2" style="background: red; height: 290px;"></div>
+            </div>
+            <div class="row">
+                <div class="col-lg-2 col-sm-2" style="background: green; height: 290px;"></div>
+                <div class="col-lg-8 col-sm-8" style="background: red; height: 290px;"></div>
+                <div class="col-lg-2 col-sm-2" style="background: green; height: 290px;"></div>
+            </div>
+        </div>
+        -->
+
+        <!-- this does not appear in the same relative position as instructor's -->
+        <!-- I think because there is no container row in my code : confirmed -->
+        <!-- challenge - change all col size to 12, will this get them to stack? -->
+        <!-- you could also put them in their own row to get them to stack -->
+        <div class="container">
+            <div class="row">
+		        <div class="col-md-8" style="border: 3px blue solid;">
+		            <p>High protein, marvelous flavor, velvety texture … our signature Sous Vide Egg Bites are an incredibly pleasing way to start your morning.</p>
+		            <p>And we’ve added a touch of spice to this popular breakfast in our new Chicken Chorizo option. It includes chipotle salsa mixed right in and corn tortilla pieces layered on top. At participating stores.</p>
+		        </div>
+		        
+		        <div class="col-md-4" style="border: 3px green solid;">
+		            <img src="https://i.imgur.com/jfadYsJ.jpg">
+		        </div>
+                <!-- 4 + 6 = 10, so the 8 col will be > 12 so it will get pushed to next line -->
+                <!-- so mess around with the sizes to see -->
+                <!-- what about the overflow attribute ? can't get this to work -->
+		        <div class="col-md-6" style="border: 3px green solid;">
+		            <p>Pumpkin Spice Latte and Salted Caramel Mocha Frappuccino® blended beverage are back to help you ease into savor-worthy moments.</p>
+		            <p>Get cozy with the latte that has everyone looking forward to fall. Highlights of pumpkin, cinnamon, nutmeg and clove flavors blend perfectly to create the undeniably favorite Pumpkin Spice Latte.</p>
+		            <p>Reward yourself for surviving summer. Our Salted Caramel Mocha blends mocha and caramel with a shake of salt on top.</p>
+		        </div>
+		    </div>
+		</div>
+        
+        <script src="" async defer></script>
+    </body>
+</html>
