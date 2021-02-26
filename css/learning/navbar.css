@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    font-family: Roboto;
+}
+
+.navbar {
+    background-color: #3b5998;
+    height: 90px;
+    /* review this */
+    overflow: hidden;
+}
+
+#logo {
+    color: white;
+    /* not this
+    float: right;
+    */
+    float: left;
+    text-align: center;
+    /* review what the affect, top/bottom and left/right */
+    padding: 22px 60px;
+}
+
+/* targets all a inside navbar id */
+.navbar a {
+    /* floating right reverses the order, but why??? */
+    float: right;
+    padding: 33px 60px;
+    color: #f2f2f2;
+    text-align: center;
+    /* removes hyperlink underlines */
+    text-decoration: none;
+    font-size: 20px;
+}
+
+/* this is new */
+a:hover {
+    background-color: forestgreen;
+    color: burlywood;
+}

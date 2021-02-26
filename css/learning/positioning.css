@@ -1,0 +1,48 @@
+.div1 {
+    height: 200px;
+    width: 200px;
+    background: green;
+    position: relative;
+    /* bottom: 80px; */
+    /* margin-left: 200px; */
+    /* right: 200px; */
+    /* margin-top: 200px; */
+    /* top: 200px; */
+}
+
+.div2 {
+    height: 200px;
+    width: 200px;
+    background: red;
+    position: relative;
+    bottom: 200px;
+}
+
+/* div1 normally stacks on top of div2 */
+/* position relative does not alter it */
+/* when bottom 80px on div1, then it pushes the div1 up from the bottom */
+/* margin pushes but it pushes things as a system, so margin-top will not push div 1 on to div 2 */
+/* but top: would push div 1 on div 2 */
+/* and it looks like the rendering order is that whatever invades into something, it renders last */
+
+
+/* next exercise we put div class inside a class container */
+/* for absolute position */
+/* this results in a box inside another box */
+.container {
+    height: 300px;
+    width: 300px;
+    background: grey;
+    position: relative;
+}
+
+.div3 {
+    height: 100px;
+    width: 100px;
+    background: red;
+    position: absolute;
+    /* this moves the inner class box */
+    right: 50px;
+    /* relative moves the box relateive to itself */
+    /* absolute moves it relative to an anchor, like an outter class */
+}

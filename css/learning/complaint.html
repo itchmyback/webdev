@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="complaint.css">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <!--
+        <script src="" async defer></script>
+        -->
+        
+        <!-- form tag allows input to be sent -->
+        <!-- use fieldset or div css -->
+        <div class="container">
+        <form>
+            <!--
+            <fieldset name="guest"><legend>Hotel Guest Contact Info</legend>
+            -->
+            <h1>Customer complaint form</h1>
+                <label for="name">Name:</label><br><input type="text" id="name" name="name"><br>
+                <label>Email address:</label><br><input type="text" name="email"><br>
+                <label>Phone:
+                    <br><input type="text" name="phone">
+                </label><br>
+                <label for="city">City:</label><br>
+                <!-- do we need the select id? -->
+                <select name="city" id="city" required>
+                    <option value="austin">Austin</option>
+                    <option value="houston">Houston</option>
+                    <option value="dallas">Dallas</option>
+                </select><br>
+                <label>What is the problem?</label><br>
+                <!-- can't comment out text in a textarea -->
+            <textarea id="complaint" name="complaint" rows="10" cols="40"><!--What is the problem?--></textarea><br>
+            <!-- ### Submit -->
+            <!-- this works also
+            <input type="submit" value="Finish!">
+            -->
+            <button>Finish!</button>
+        <!-- </fieldset> -->
+        </form>
+        </div>
+    </body>
+</html>
