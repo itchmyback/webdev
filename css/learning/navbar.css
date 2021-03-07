@@ -1,6 +1,56 @@
 body {
+    /* note this margin removal */
     margin: 0;
     font-family: Roboto;
+}
+
+/* ul class=baseline highlights all pink as a block element */
+.baseline {
+    background-color: pink;
+}
+
+/* the a refs highlight light green as inline elements */
+.baseline a {
+    background-color: lightgreen;
+}
+
+/* standard nav-bar formatting */
+.nopaddingmargin {
+    /* remove bullets */
+    list-style-type: none;
+    background-color: lightgreen;
+    /* why is margin: 0 in effect twice? saw no difference here */
+    margin: 0;
+    padding: 0;
+    /* don't spill outside box */
+    overflow: hidden;
+}
+
+    /* html elements typically stack on top of each other */
+    /* float can make elements align left or right */
+    /* but float does not go inside the ul, float target specific elements inside a ul when dealing with navbar */
+    /* float: left; */
+
+/* targets: ul class = "nopaddingmargin, floater" */
+/* This causes the target ul to float next to the subsequent element */
+/* Again - this should be inside the ul */
+.floater {
+    /* float: left; */
+}
+
+/* This is supposed to be the ul of class nopaddingmargin */
+/* Is this overridden by the class nopaddingmargin? */
+/* This doesn't seem to do anything, but it should!!! */
+/* The issue seems to be with the selector */
+/* YES - my issue was that I had a comma in the multiple class list in html */
+ul.nopaddingmargin { 
+    border: green solid 3px;    
+    float: left;
+}
+
+/* This will cause the target element to float next to the subsequent element */
+li.testing {
+    float: left;
 }
 
 .navbar {

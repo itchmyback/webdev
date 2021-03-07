@@ -1,3 +1,10 @@
+/* 
+position - relative and absolute
+    relative is relative to an elements normal position
+    absolute is relative to an element inside another anchor element, else the body
+    fixed is relative to the viewport
+    sticky is relative to the scrollbar
+*/
 .div1 {
     height: 200px;
     width: 200px;
@@ -15,7 +22,8 @@
     width: 200px;
     background: red;
     position: relative;
-    bottom: 200px;
+    /* bottom: 200px; */
+    left: 200px;
 }
 
 /* div1 normally stacks on top of div2 */
@@ -29,6 +37,7 @@
 /* next exercise we put div class inside a class container */
 /* for absolute position */
 /* this results in a box inside another box */
+
 .container {
     height: 300px;
     width: 300px;
@@ -36,6 +45,7 @@
     position: relative;
 }
 
+/* also, position absolute seems to shrink the size of a div similar to an inline element */
 .div3 {
     height: 100px;
     width: 100px;
@@ -43,6 +53,6 @@
     position: absolute;
     /* this moves the inner class box */
     right: 50px;
-    /* relative moves the box relateive to itself */
+    /* relative moves the box relative to itself */
     /* absolute moves it relative to an anchor, like an outter class */
 }

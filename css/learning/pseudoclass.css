@@ -1,3 +1,6 @@
+/* PSEUDO-CLASS - keyword added to a selector that specifies a special state of the selected element */
+/* examples: hover, focus, active */
+
 /* no spaces in pseudoclass */
 h1:hover {
     background: purple;
