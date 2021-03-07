@@ -1,0 +1,61 @@
+.message {
+    border: solid green 3px;
+    color: white;
+    position: relative;
+    /* position: absolute; */
+    /* top: 50%; */
+}
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    height: 100%;
+    font-family: Roboto;
+}
+
+.backgroundImg {
+    background-image: url("background1.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+
+.formcontainer {
+    position: fixed;
+    background-color: white;
+    width: 400px;
+    margin: 40px;
+    padding: 25px;
+    border: 3px solid black;
+    border-radius: 50px;
+}
+
+input[type="email"], input[type="password"] {
+    padding: 15px;
+    width: 100%;
+    margin: 15px 0 30px 0;
+    background: #EEEEEE;
+}
+
+input[type="email"]:focus, input[type="password"]:focus {
+    background: #E0E0E0;
+}
+
+.thebutton {
+    padding: 16px 20px;
+    font-size: 28px;
+    cursor: pointer;
+    background: #F44336;
+    width: 100%;
+    color: white;
+    border-radius: 30px;
+}
+
+.thebutton:hover {
+    color: purple;
+    background: orange;
+    transition: 0.5s;
+}
