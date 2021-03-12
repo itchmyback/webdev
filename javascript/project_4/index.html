@@ -10,14 +10,28 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="nstyles.css">
     </head>
+    <!--
     <body style="font-size:96px;">
+    -->
+    <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <div class="message">
-            <p>Hello World!</p>
+
+        <!-- approach: container class which has background image (set in JS) and text inside -->
+        <!-- Note: the container class is essentially the background image -->
+        <!-- an image set below is not the background image, it would just be a big image of the container -->
+        <div class="container">
+            <!--
+            <img class="bkgImg" src="background1.jpg">
+            -->
+            <!-- trying to set background image from html requires some formatting, otherwise nasty result -->
+            <!-- <div class="htmlbkg" style="background-image: url('background1.jpg');"> -->
+            <div class="message">
+                <p>AN ONLINE MARKETPLACE FOR PEOPLE WHO LOVE COOKIES. COMING SOON!</p>
+            </div>
         </div>
         <script src="script.js">
         </script>

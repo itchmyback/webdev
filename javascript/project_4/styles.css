@@ -3,8 +3,23 @@
     color: white;
     position: relative;
     /* position: absolute; */
-    /* top: 50%; */
+    /* top: 40%; */
+    /* If width isn't set, the text doesn't adjust. Why? */
+    width: 540px;
+    /* Homework says 900px, but 540 px matches the reference screenshot */
+    /* text-align: center; */
+    font-size: 54px;
 }
+
+.message p {
+    border: solid green 3px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+transform: translate(-50%, -50%);
+}
+
 * {
     box-sizing: border-box;
 }
@@ -13,14 +28,31 @@ html, body {
     margin: 0;
     height: 100%;
     font-family: Roboto;
+    /* A background image defined in body can be overridden in JS with a target of body */
+    /* background-image: url("background1.jpg"); */
 }
 
-.backgroundImg {
-    background-image: url("background1.jpg");
+/* This isn't necessary, it's an exercise to show that without this resize,
+the image referenced in the html will not cover the entire page */
+#bkgImg {
+    width: 100%;
+}
+
+/* This is the container for the background image */
+/* Note - the background img set here does not override an image set in the html */
+/* In fact - nothing here seems to impact the image set in this div */
+/* So the image width has to be set independly on the image */
+.container {
+    /* Why isn't the background image set here is not overridden by the JS */
+    /* It seems like it's because it's defined in an element other than body */
+    /* Because the JS specifically targets the body.style */
+    /* background-image: url("background2.jpg"); */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;
+    /* Setting width here does not impact the image inside the div */
+    /* width: 100%; */
 }
 
 .formcontainer {

@@ -18,6 +18,11 @@ bkg_array[2] = "url(background3.jpg)";
 var counter = 1;
 
 document.body.style.backgroundImage = bkg_array[0]; 
+// The below notation targets the backgroundImage defined in the .container class
+// How to target all backgroundImages?
+// document.querySelector(".container").style.backgroundImage = "url(background2.jpg)";
+
+// alert(document.body.style.backgroundImage);
 
 // Start the index counter with 1 because 0 is the initialized value at the start
 // before setInterval kicks in
