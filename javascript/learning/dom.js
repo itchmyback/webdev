@@ -121,6 +121,7 @@ document.querySelector("h1").addEventListener("click",
     }
 );
 
+// querySelectorAll doesn't actually select all of a given selector
 document.querySelectorAll()
 document.querySelectorAll("h1").addEventListener("mouseover", 
     function() {
