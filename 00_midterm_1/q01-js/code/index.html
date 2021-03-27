@@ -8,16 +8,25 @@
 </head>
 <body>
     <div class="container" id="Calculator">
+        <form>
         <div class="input-group-sm mb-3 mt-3">
-            <input class="form-control" type="text" id="first" placeholder="first number">
+            <!-- adding default value field -->
+            <input class="form-control" type="text" id="first" placeholder="first number" value="">
         </div>
         <div class="input-group-sm mb-3 mt-3"> 
-            <input class="form-control" type="text" id="second" placeholder="second number">
+            <!-- adding default value field -->
+            <input class="form-control" type="text" id="second" placeholder="second number" value="">
         </div>
         <div class="input-group-sm">
             <input class="btn btn-success" type="submit" value="Multiply" >
         </div>
         <p class="mt-4" id="message">The answer is </p>
+
+        <!-- this button works with event listener, why doesn't the above button work to trigger event listener? -->
+        <!--
+                    <button type="submit">Submit</button>
+        -->
+        </form>
 
     </div>
     <script src="script.js"></script>

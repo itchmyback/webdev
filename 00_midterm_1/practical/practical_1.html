@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Jon adds bootstrap here -->
+        <link rel="stylesheet" href="practical_1.css">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <!--
+        <script src="" async defer></script>
+        -->
+        <h1>Metric Converter</h1>
+        <!-- form tag allows input to be sent -->
+        <h3>Enter a value in either input field, lbs or Kg, to see the conversion in the other field</h3>
+            <div>
+                <form id="weight">
+                    <div class="conv">
+                        <label for="pounds"><p>lbs</p></label> <input type="text" id="pounds">
+                    </div>
+                    <div class="conv">
+                        <label for="kilograms"><p>Kg</p></label> <input type="text" id="kilograms">
+                    </div>
+                </form>
+                <!--
+                <p class="kg">kg</p>
+                -->
+            </div>
+        <h3>Enter a value in either input field, Miles or Km, to see the conversion in the other field</h3>
+            <div>
+                <form id="distance">
+                    <div class="conv">
+                    <div>
+                        <label for="miles"><p>Miles</p></label> <input type="text" id="miles">
+                    </div>
+                    <div class="conv">
+                        <label for="kilometers"><p>Km</p></label> <input type="text" id="kilometers">
+                    </div>
+                </form>
+            <!--
+            <p class="km">km</p>
+            -->
+            </div>
+        </div>
+        <script src="practical_1.js">
+        </script>
+    </body>
+</html>

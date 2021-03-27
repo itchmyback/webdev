@@ -26,38 +26,6 @@ function calc (a) {
 
 console.log(calc(2)(3)(4));
 
-function lognum() {
-  for(var i = 1; i <= 5; i++) {
-    if(i % 2 == 0) {
-      console.log(i + " is even");
-    } else {
-      console.log(i + " is odd");
-    }
-  }
-}
-
-// lognum();
-
-function oddeven(a, b) {
-  var output = {};
-  var testOjbect = {"fname" : "john"};
-  testObject 
-  for (var i = Number(a); i <= Number(b); i++) {
-    if (i % 2 == 0) {
-      output.i = "even";
-      console.log(i + " is even");
-    } else {
-      output.i = "odd";
-      console.log(i + " is odd");
-    }
-  } // end for
-  console.log(output);
-  console.log(testOjbect);
-  return output;
-} // end function
-
-// oddeven(1,5);
-
 myArray = [1, 2, 3, 4, 5];
 console.log(myArray);
 
@@ -108,3 +76,42 @@ yourArray.splice(3, 2)
 console.log(yourArray);
 
 document.querySelector("p:nth-of-type(odd)").style.backgroundColor = "#ddd";
+
+// object question
+function lognum() {
+  for(var i = 1; i <= 5; i++) {
+    if(i % 2 == 0) {
+      console.log(i + " is even");
+    } else {
+      console.log(i + " is odd");
+    }
+  }
+}
+
+// lognum();
+
+  var testObject = {"fname" : "john"};
+  testObject.lname = "nguyen";
+  console.log(testObject);
+
+// I was defeated by a typo and need bracket notation when working with variables for keys
+function oddeven(a, b) {
+  var output = {};
+
+  for (var i = Number(a); i <= Number(b); i++) {
+    if (i % 2 == 0) {
+     output[i.toString()]  = "even";
+//      output.i.toString() = "even";
+//      console.log(i + " is even");
+//      console.log(i.toString());
+    } else {
+     output[i.toString()]  = "odd";
+//      output.i = "odd";
+//      console.log(i + " is odd");
+    }
+  } // end for
+  console.log(output);
+  return output;
+} // end function
+
+oddeven(3,9);
