@@ -11,3 +11,12 @@ Please describe what would be the output of the following code snippet on mobile
     </div>
 ```
 ### Answer:
+bootstrap sizes based on screen width
+xs - phones, width < 768px
+sm - tablets, 992px > width >= 768px
+md - small laptops, 1200px > width >= 992px
+lg - desktops and laptops, width >= 1200px
+
+bootstrap output
+On a mobile phone, all the div entries will stacked in a single column
+On a desktop, all the div entries will be in their own column on a single row
