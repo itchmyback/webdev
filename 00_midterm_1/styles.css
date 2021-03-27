@@ -1,0 +1,37 @@
+p {
+    color: blue;
+} 
+
+div.intro {
+    color: green;
+}
+
+div {
+    display: flex;
+}
+
+h1 {
+    background: #FAB;
+    background-color: #FFF;
+}
+
+/* selector question */
+div + p {
+    background-color: green;
+}
+
+div p {
+    background-color: lightblue;
+}
+
+div, p {
+    font-size: 20px;
+}
+
+div > p {
+    background-color: orange;
+}
+
+div ~ p {
+    background-color: purple;
+}
