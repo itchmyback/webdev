@@ -13,3 +13,6 @@ what you get.
 
 ### Please write your answer here:
 3. all div's with a class of "intro"
+
+### Feedback:
+Incorrect. querySelector will select the first DOM node that matches what's passed as an argument.

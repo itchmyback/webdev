@@ -14,3 +14,6 @@
 # Number 1. maybe should be load()? 
 # onload() might be an old method
 # 1. `$(window).onload()` doesn't seem correct
+
+### Feedback
+Incorrect.

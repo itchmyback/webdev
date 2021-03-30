@@ -12,3 +12,6 @@ document.querySelector("div p")
 
 ### Please write your answer here:
 2. all p elements inside all div elements on a page
+
+### Feedback:
+Incorrect. It is using `querySelector`, so it's choosing the first match.

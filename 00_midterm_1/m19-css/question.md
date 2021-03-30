@@ -13,4 +13,7 @@
 4. `h1 {background: #FFF}`
 
 # Both 3 and 4 work
-# h1.all would also work if the all the h1's had a class="all", but that wasn't specified so not choosing it.
+ h1.all would also work if the all the h1's had a class="all", but that wasn't specified so not choosing it.
+
+ ### Feedback
+Yes! `background` is short hand for `background-color`, `background-size`, and more! For that reason, 3 and 4 would work. Your explanation for 2 is also correct and the reason why it's not the answer.
