@@ -49,3 +49,7 @@ Create a web page with appropriate styling such that the view looks, visually as
 
 <img src="images/background.png" alt="" width="50%">
 
+### Feedback:
+- Mostly there! You just had your operations flipped for both conversions, so I was getting the wrong value.
+- I'm glad you commented your attempts in the script.js. I understand you mostly just commented on the first function because it's similar to the rest. That being said, how would you refactor this so that you didn't repeat yourself as much?
+- Otherwise, your practical looks great and works well with slight adjustments.

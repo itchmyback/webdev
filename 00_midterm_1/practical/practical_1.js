@@ -3,7 +3,7 @@
 document.querySelector("#pounds").addEventListener("input", function(event) {
     // alert("Gratz");
     var lbsInput = document.querySelector("#pounds").value;
-    var kgOutput = lbsInput * 2.2;
+    var kgOutput = lbsInput / 2.2;
 
 //    document.querySelector(".kg").textContent = kgOutput;
     // Well this was tricky, instead of targeting textContent, must target value >:(
@@ -13,21 +13,21 @@ document.querySelector("#pounds").addEventListener("input", function(event) {
 document.querySelector("#kilograms").addEventListener("input", function(event) {
     // alert("Gratz");
     var kgInput = document.querySelector("#kilograms").value;
-    var lbsOutput = kgInput / 2.2;
+    var lbsOutput = kgInput * 2.2;
 
     document.querySelector("#pounds").value = lbsOutput.toFixed(2);
 })
 
 document.querySelector("#miles").addEventListener("input", function(event) {
     var milesInput = document.querySelector("#miles").value;
-    var kmOutput = milesInput / 1.6;
+    var kmOutput = milesInput * 1.6;
 
     document.querySelector("#kilometers").value = kmOutput.toFixed(2);
 })
 
 document.querySelector("#kilometers").addEventListener("input", function(event) {
     var kmInput = document.querySelector("#kilometers").value;
-    var milesOutput = kmInput * 1.6;
+    var milesOutput = kmInput / 1.6;
 
     document.querySelector("#miles").value = milesOutput.toFixed(2);
 })
