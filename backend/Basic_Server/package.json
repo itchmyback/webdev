@@ -1,0 +1,22 @@
+{
+  "name": "basic_server",
+  "version": "1.0.0",
+  "description": "Johnny G. Nguyen",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ACCSoftwareBootcamp/johnnyg.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ACCSoftwareBootcamp/johnnyg/issues"
+  },
+  "homepage": "https://github.com/ACCSoftwareBootcamp/johnnyg#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
