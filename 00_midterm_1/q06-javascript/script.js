@@ -17,4 +17,4 @@ function oddeven(a, b) {
     return output;
   } // end function
   
-  oddeven(3,9);
+  oddeven(1,5);

@@ -10,3 +10,7 @@ git fetch gets the updates but does not permanently change your local repo
 
 2.
 git add allows you to review your changes before committing
+
+### Feedback:
+Answer 1 - Yes! `git fetch` would not integrate the changes to your local repo.
+Answer 2 - That sounds more like what `git status` would do. `git add` is more about forming your commit. Why would I want to add/stage only particular files or folders?

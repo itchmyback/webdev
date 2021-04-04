@@ -14,3 +14,7 @@ b. remove unnecessary code
 2.
 a. use a CDN (content delivery network) to deliver images
 b. compress the image file size
+
+
+### Feedback:
+All good!

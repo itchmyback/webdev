@@ -26,3 +26,7 @@ red - It is the second <li>, so it is even. It will not highlight blue.
 
 ### Answer B:
 blue - It will match the last in the file, and the last match is the id selector #must-buy
+
+### Feedback:
+- **A** - The `nth-of-type` is going off of the things with a class of `highlight`. That `<li>` is the first (and only) element with that class, so it will end up being blue partially for that reason.
+- **B** - It will be blue, but it has to do with the specificity and not necessarily the order.

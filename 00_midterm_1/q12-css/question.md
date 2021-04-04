@@ -4,3 +4,7 @@ Please use your own simple words to describe what are cascading rules in CSS. Pl
 
 ### Answer:
 These are the rules that determine which style command gets implemented first when there is a conflict between their precedence.
+
+
+### Feedback:
+Good definition so far. Just need details about the rules. You're at 20 words currently, plenty more to work with! 
