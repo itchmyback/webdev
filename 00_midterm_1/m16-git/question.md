@@ -15,3 +15,5 @@
 It's actually just `git log`. `git status` tells you the state of your repository. I love the documentation here from atlassian: https://www.atlassian.com/git/tutorials/inspecting-a-repository#:~:text=The%20git%20status%20command%20displays,regarding%20the%20committed%20project%20history.
 
         "It lets you see which changes have been staged, which haven’t, and which files aren’t being tracked by Git"
+
+`git log` will give us our commit history.
