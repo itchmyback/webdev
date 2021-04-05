@@ -31,8 +31,5 @@ What do the following CSS selectors select? Please provide short examples
 
 5. `div ~ p`: `<p>I'm Outside</p>` is preceded by a `<div>` element
 
-### Answer:
-Skip
-
 ### Feedback:
-I see you skipped, but super good!
+Correct! Super good!
