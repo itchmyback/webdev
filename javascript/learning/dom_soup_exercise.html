@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+         <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+        <link rel="stylesheet" href="dom_soup_exercise.css">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <!--
+        <p>Hello World!</p>
+        -->
+       <!-- my implementation, mixed with Jon's --> 
+       <!-- he says his image is centered because it's in a container and centered?-->
+       <!-- I don't understand centering still -->
+        <div class="soup_container">
+            <img class="soup" src="soup.jpg" alt="that_soup">
+            <!-- he doesn't use button, he uses form for button -->
+            <button class="hide_button">Hide/Show box</button>
+            <form>
+                <input type="checkbox" id="hide">
+                <label for="hide"></label>
+            </form>
+        </div>
+        <script src="dom_soup_exercise.js">
+        </script>
+    </body>
+    <!-- Jon is grabbing bootstrap -->
+</html>
