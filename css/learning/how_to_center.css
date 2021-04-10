@@ -1,0 +1,92 @@
+.w3elem {
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+}
+
+.redstaplerelem {
+    margin: 0 auto;
+    border: 3px solid red;
+}
+
+.redstaplerparent {
+    text-align: center;
+    border: 3px solid red;
+}
+
+.redstaplerchild {
+    display: inline-block;
+    border: 3px solid blue;
+}
+
+.redstaplerinline {
+    display: inline-block;
+    border: 3px solid red;
+}
+
+.redstaplernotransform {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 50%;
+    left: 50%;
+    /* transform: translate(-50%, -50%); */
+    border: 3px solid orange;
+}
+
+.redstaplertransform {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 3px solid red;
+}
+.w3htext {
+    text-align: center;
+    border: 3px solid green;
+    height: 50px;
+}
+
+.w3vtext {
+    padding: 70px 0;
+    border: 3px solid green;
+}
+
+.w3hvtext {
+    text-align: center;
+    padding: 70px 0;
+    border: 3px solid green;
+}
+
+.w3textsmallbox {
+    text-align: center;
+    padding: 70px 0;
+    border: 3px solid green;
+    width: 10%;
+}
+
+.w3textcenteredsmallbox {
+    margin: auto;
+    text-align: center;
+    padding: 70px 0;
+    border: 3px solid green;
+    width: 10%;
+}
+
+.w3flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    border: 3px solid green;
+}
+
+.img_soup {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /* width: 40%; */
+}
