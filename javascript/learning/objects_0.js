@@ -107,6 +107,7 @@ people.forEach (function (person) {
         console.log(person[key]);
         // Why doesn't this work?
         // console.log(person.key)
+	// Let's make note of this in future practices, but it seems to be related to dot notation vs bracket notation
     } // end for
 }) // end  forEach
 
