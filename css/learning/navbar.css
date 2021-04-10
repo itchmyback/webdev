@@ -1,3 +1,7 @@
+.padding_test {
+    border: 3px solid orange;    
+}
+
 body {
     /* note this margin removal */
     margin: 0;
@@ -31,7 +35,7 @@ body {
     /* but float does not go inside the ul, float target specific elements inside a ul when dealing with navbar */
     /* float: left; */
 
-/* targets: ul class = "nopaddingmargin, floater" */
+/* experiment, targets: ul class = "nopaddingmargin, floater" */
 /* This causes the target ul to float next to the subsequent element */
 /* Again - this should be inside the ul */
 .floater {
@@ -44,15 +48,46 @@ body {
 /* The issue seems to be with the selector */
 /* YES - my issue was that I had a comma in the multiple class list in html */
 ul.nopaddingmargin { 
-    border: green solid 3px;    
-    float: left;
+    border: 3px solid green;    
 }
 
 /* This will cause the target element to float next to the subsequent element */
+/* EXCEPT, and this is interesting, if the ul floater container is floating, the internal li element will not float? */
+/* Ask this question at some point */
 li.testing {
     float: left;
 }
 
+/*  So how to target all the li inside a particular element of a class?
+    Don't think there is a way
+*/
+li.real {
+    float: left;
+    border-right: 1px solid white;
+}
+
+/* convert a into block level elements */
+a.real {
+    display: block;
+    padding: 25px 112px; /* top/bottom left/right */
+    font-size: 24px;
+    color: white;
+    /* remove underline */
+    text-decoration: none;
+}
+
+/* Here is some hover magic */
+a.real:hover:not(.logo) {
+    background: #263238;
+}
+
+.logo {
+    background: #015798;
+}
+
+.fa-building {
+    color: #ffeb3b;
+}
 .navbar {
     background-color: #3b5998;
     height: 90px;

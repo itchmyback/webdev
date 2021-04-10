@@ -13,6 +13,8 @@
         <link rel="stylesheet" href="navbar.css">
         <!-- font awesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- this doesn't work :( -->
+        <link rel="stylesheet" href="https://fontawesome.com/icons/building?style=regular">
         <!-- google fonts --> 
         <!-- don't need the preconnect link -->
         <!-- roboto regular 400 -->
@@ -26,7 +28,7 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <!-- from coder vox -->
+        <!-- from coder vox, 6.17 -->
         <!-- start off with an unordered list -->
         <!-- # link is a placeholder -->
         <ul class="baseline">
@@ -36,14 +38,27 @@
             <li><a href="#">Contact</a></li>
         </ul>
 
+        <!-- padding here - it's because padding was removed from the next set of ul -->
+        <div class="padding_test">Is there padding?</div>
+
         <!-- here the padding and margin will be removed -->
         <!-- note: for multiple class list, DON'T use comma -->
         <ul class="nopaddingmargin floater">
-            <li class="testing"><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
+            <li><a href="#">Home</a></li>
+            <li class="testing"><a href="#">About</a></li>
             <li><a href="#">FAQ</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
+
+        <!-- next steps -->
+        <ul class="nopaddingmargin">
+            <li class="real"><a class="real logo" href="#"><i class="far fa-building"></i> Home</a></li>
+            <li class="real"><a class="real" href="#">About</a></li>
+            <li class="real"><a class="real" href="#">FAQ</a></li>
+            <li class="real"><a class="real" href="#">Contact</a></li>
+        </ul>
+
+        <!-- no space between ul and div on the webpage, why?-->
 
         <!-- in class exercise -->
         <div class="navbar">
