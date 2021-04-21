@@ -54,7 +54,7 @@ app.get('/pokemon', (req, res) => {
     pokeArray.push(pokemon.random());
   }
   // c. Using the map method, create a new array of pokemon encased in <p> tags
-  let result = pokeArray.map(el => {
+  let result = pokeArray.map( (el) => {
     return `<p>${el}</p>`;
   });
   res.send(result.join(''));
