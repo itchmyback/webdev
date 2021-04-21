@@ -7,7 +7,7 @@ const logger = require('morgan');
 const chalk = require('chalk');
 
 // morgan
-// app.use(logger()); looking inside morgan to see arguments
+// app.use(logger()); looking inside morgan to see arguments -- needs 'dev' argument?
 chalk.yellow(app.use(logger('dev')));
 
 // chalk - for color coding
