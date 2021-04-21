@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+    font-family: Inconsolata;
+}
+
+p {
+    background-color:cornflowerblue;
+}
+
+/* fix the images not showing up on a single row */
+/* all img inside class img_container */
+.img_container img {
+    /* FOR BOOTSTRAP --
+    /* setting a width to a specific value may overload the alotted element width */
+    /* setting to a percentage says set to the percentage width of the parent container */
+    width: 100%;
+    /* what is vh? viewer width */
+    height: 50vh;
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+        <title>5 Day Forecast</title>
+        <link rel="shortcut icon" href="assets/lightning.png" type="image/png"/>
+        <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="CSS/bootstrap.min.css" />
+        <link rel="stylesheet" href="CSS/style.css" />
+    </head>
+    <body >
+        <div class="container text-center py-5 mt-5 rounded">
+        <h1 class="text-center text-white my-3">5 Day Forecast</h1>
+        <form action="/results" method="get">
+            <input type="text" name="location" placeholder="Enter city..." autocomplete='off' autofocus/>
+            <button class="btn btn-primary" type="submit">Click Me</button>
+        </form>
+        </div>
+    </body>
+</html>

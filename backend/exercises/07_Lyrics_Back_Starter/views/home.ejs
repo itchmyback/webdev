@@ -1,0 +1,25 @@
+
+  <%- include ('partials/header') %>
+
+  <h1 class="text-center text-white">Find the lyrics to your favorite song!</h1>
+  <div class="container well fs-4">
+    <!-- we used default form:get -->
+    <!-- after making the submit buttons below, we want the form to get sent to 'getLyrics'-->
+   <form action="/getLyrics" method="get">
+<!--    <form action="/getMoreLyrics" method="get"> -->
+      <!-- two inputs - one for song, one for lyrics -->
+      <!-- going to avoid the linking info -->
+      <!-- <label for=""> -->
+        <label class="text-white">Enter artist: <input class="px-3" type="search" name="artist" id="artist1" placeholder="artist..." autocomplete="off"/></label>
+        <label class="text-white">Enter song title: <input class="px-3" type="search" name="title" id="title1" placeholder="song title..." autocomplete="off"/></label>
+        <!-- in forms with button type = search, there will be a '?' in the address bar, which is a query -->
+
+        <button class="btn btn-success" type="submit">Submit</button>
+        <button class="btn btn-danger" type="reset">Reset</button>
+
+    </form>
+
+  </div>
+
+  <%- include ('partials/footer') %>
+  

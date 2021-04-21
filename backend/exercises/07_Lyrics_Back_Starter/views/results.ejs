@@ -1,0 +1,16 @@
+    <%- include('partials/header') %>
+
+    <h1>Results page</h1>
+
+    <%= data %>
+
+    <!-- add in artist and title variables, from JM examples -->
+    <div class="text-white text-center my-3">
+        <h1 class='text-uppercase'><%= title %> <span class='text-lowercase'>by</span> <%= artist %></h1>
+    </div>
+    <div class="container well" id='lyrics'>
+        <p class='text-white py-3'><%- data %></p>
+    </div>
+
+
+    <%- include('partials/footer') %>

@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+}
+
+body {
+    background: darkblue url('../assets/lightning.png') left top no-repeat;
+    background-size: cover;
+
+}
+
+div {
+    box-shadow: 0 .5em 2em white;
+    background-color: #000078;
+}
+
+h1, 
+h2,
+h3 {
+    text-shadow: 2px 2px 5px black;
+}
+
+.weather {
+    background-color: lightblue;
+    display: inline-block;
+    width: 15%;
+    height: 100%;
+}
+
+/* form {
+    width: 50%;
+    margin-left: 35vw;
+} */
+
+input {
+    text-align: center;
+    height: 30px;
+    width: 300px;
+}
+
+button {
+    background: lightblue;
+} 
