@@ -227,10 +227,10 @@ var miso = "soup";
 console.log({miso});
 // {miso: "soup"}
 
-// So what does {expression} mean?
+// What does {expression} mean?
 // Who knows, but the syntax looks like
 // {expression: contents}
-// It's like it creates an object between the expression and it's value.
+// So it looks like it creates an object between the expression and it's value.
 
 // BUT, but for destructing purposes, {} notation behaves differently
 // NOTE {mappy} does not destructure because mappy is the object
@@ -241,11 +241,16 @@ console.log({miso});
 // const {fname, lname} = mappy;
 // console.log(fname);
 // undefined - what?????
-// oh it's because mappy is an array of objects
+// oh it's because mappy is an array of objects, not an object
 
 const {fname} = people;
 console.log(fname);
 // Johnny - there we go!
+// Recall, destructuring essentially converts {fname: "Johnny"} to fname = "Johnny"
+// So going back to the reverse process (see above), the object could be constructed by going in reverse
+// fname = "Johnny", then
+console.log({fname});
+// should yield {fname: "Johnny"}
 
 // destructure, the longer way
 // But this avoids listing out discrete values of keys
