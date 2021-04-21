@@ -1,0 +1,40 @@
+// Piyush lecture
+// What does a query selector return? a collection? an array? an element?
+// It returns a DOM node object - an object
+// The reason is because web development came about on an as-needed basis.
+// The DOM node object was created for the browser, not for JavaScript.
+
+// Everything is a DOM object, body down to whatever tags.
+
+// DOM node object contains all the DOM selector methods - true or false?
+// getElementsByTag('p') - not defined
+// document.getElementsByTag('p') - this works, document is the higher object
+
+// How to get/set the text of an element?
+// What property do we use to get/set the HTML of an element?
+// What method do we use to bind an event to an element?
+// example - p.addEventListener('click','fn')
+// Doesn't have to be the document, can add event listener to any element
+
+// var mycoll = document.getElementsByTagName('p')
+// missed the point here - think we were just looking at all the attributes of the DOM node object
+
+// Going through objects, arrays
+// What do you do if you don't know the keys of an object? I'm guessing you list out the keys
+// What are primitives? anything that's not an object
+// Is string an object? Well, it has methods.
+
+// Operators
+
+// Loops
+
+// DOM Nodes - methods and lots of methods, most that we've never seen
+
+// document ready vs window onload
+
+// jQuery - we haven't learned - why are we reviewing?
+// skipping
+
+// git
+
+// node.js - skipping

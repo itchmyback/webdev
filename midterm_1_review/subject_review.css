@@ -1,0 +1,50 @@
+#container {
+    background-color: blanchedalmond;
+    /* flexbox container properties */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    /* shorthand notation: flex-flow: column wrap */ 
+
+    height: 10em;
+
+    /* this forces width to use entire page */
+    /* space around vs space-between: difference is space at the ends */
+    justify-content: space-around;
+
+    /* this will scale the height to text and centerline text horizonally */
+    align-items: baseline;
+}
+
+.child {
+    background: teal;
+    /* each "cell" width" */
+    /*
+    width: 100px;
+    */
+    /* width: 10% will not wrap in our current example because 10% x 7 = 70%
+    does not exceed 100%
+    */
+    width: 40px;
+}
+
+/* this is new */
+.second-child {
+    background-color: pink;
+    /* increase width from 40px to big number */
+    /* weird spacing between 1st and 2nd rows, top justified  */
+
+    width: 80px;
+    font-size: 40px;
+    
+    /* flex grow */
+    /* flex size needs to be per child, any child without flex size will not adjust */
+    /* flex-grow: 1; */
+}
+
+.blacksheep {
+    color: white;
+    background-color: black;
+    flex-grow: 1;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="flexbox.css">
+        <style>
+            #first_div {background-color: skyblue; border: 3px solid darkblue;}
+            #second_div {background-color: yellow; border: 3px solid brown;}
+            div {width: 20vw; height: 100px; padding: 5% 10%; margin: 0 auto;}
+            span {font-family: 'Lucida Sans'}
+        </style>
+    </head>
+    <body>
+        <!-- width -- percent is of the parent element where as vw is the viewport width -->
+        <!-- padding -- first number is top bottom, second number is left right -->
+        <!-- need to center them -->
+        <!-- margin auto only applies to block level ?-->
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div id="first_div">
+            <span class="first_span">hi</span>
+            <span class="second_span">there</span>
+        </div>
+        <div id="second_div">
+            <span class="first_span">hello</span>
+            <span class="second_span">back</span>
+        </div>
+       <!-- script src="" this doesn't work --> 
+        <script>
+            // querySelector only operates on first match
+            document.querySelector(".first_span").style.color = "red";
+            var i = 0;
+            function swapColor() {
+                if (i % 2 == 1) {
+                    document.querySelector("#first_div").style.background = "yellow";
+                    document.querySelector("#second_div").style.background = "skyblue";
+                } else {
+                    document.querySelector("#first_div").style.background = "skyblue";
+                    document.querySelector("#second_div").style.background = "yellow";
+                }
+                i++;
+            }
+            setInterval(swapColor, 100000);
+            // introduce clearInterval
+            var intervalId = setInterval(swapColor, 5000);
+            function startStop() {
+                clearInterval(intervalId);
+            }
+
+        </script>
+    </body>
+</html>

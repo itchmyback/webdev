@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Jon adds bootstrap here -->
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <!--
+        <script src="" async defer></script>
+        -->
+        <p>Hello World</p>
+        <!-- form tag allows input to be sent -->
+        <form>
+            <!-- field set adds around form data -->
+            <fieldset name="guest"><legend>Hotel Guest Contact Info</legend>
+                <label for="yname">Your Name:</label> <input type="text" name="yname" id="yname">
+                <label for="ypassword">Your Password:</label> <input type="text" name="ypassword" id="ypassword">
+            <!-- ### Submit -->
+            <input type="submit">
+            </fieldset>
+        <!-- here's how Jon did it -->
+        </form>
+        <div class="container">
+            <!-- empty paragraph spot reserved for the error message -->
+            <p class="error"></p>
+            <div id="wrapper">
+                <form id="jon_form"> <!-- I added this part in -->
+                    <!-- what is for? it's for the labels -->
+                    <!-- he doesn't use the name attributes -->
+                    <label for="name">Your name</label>
+                    <input type="text" id="name">
+                    <label for="password">Your password</label>
+                    <input type="password" id="password">
+                    <!-- added type to button -->
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+        <script src="review_exercise_with_jon.js">
+        </script>
+    </body>
+</html>
