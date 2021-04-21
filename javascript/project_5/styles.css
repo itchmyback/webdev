@@ -1,0 +1,125 @@
+.padding_test {
+    border: 3px solid orange;    
+}
+
+body {
+    /* note this margin removal */
+    margin: 0;
+    font-family: Roboto;
+}
+
+/* ul class=baseline highlights all pink as a block element */
+.baseline {
+    background-color: pink;
+}
+
+/* the a refs highlight light green as inline elements */
+.baseline a {
+    background-color: lightgreen;
+}
+
+/* standard nav-bar formatting */
+.nopaddingmargin {
+    /* remove bullets */
+    list-style-type: none;
+    background-color: lightgreen;
+    /* why is margin: 0 in effect twice? saw no difference here */
+    margin: 0;
+    padding: 0;
+    /* don't spill outside box */
+    overflow: hidden;
+}
+
+    /* html elements typically stack on top of each other */
+    /* float can make elements align left or right */
+    /* but float does not go inside the ul, float target specific elements inside a ul when dealing with navbar */
+    /* float: left; */
+
+/* experiment, targets: ul class = "nopaddingmargin, floater" */
+/* This causes the target ul to float next to the subsequent element */
+/* Again - this should be inside the ul */
+.floater {
+    /* float: left; */
+}
+
+/* This is supposed to be the ul of class nopaddingmargin */
+/* Is this overridden by the class nopaddingmargin? */
+/* This doesn't seem to do anything, but it should!!! */
+/* The issue seems to be with the selector */
+/* YES - my issue was that I had a comma in the multiple class list in html */
+ul.nopaddingmargin { 
+    border: 3px solid green;    
+}
+
+/* This will cause the target element to float next to the subsequent element */
+/* EXCEPT, and this is interesting, if the ul floater container is floating, the internal li element will not float? */
+/* Ask this question at some point */
+li.testing {
+    float: left;
+}
+
+/*  So how to target all the li inside a particular element of a class?
+    Don't think there is a way
+*/
+li.real {
+    float: left;
+    border-right: 1px solid white;
+}
+
+/* convert a into block level elements */
+a.real {
+    display: block;
+    padding: 25px 112px; /* top/bottom left/right */
+    font-size: 24px;
+    color: white;
+    /* remove underline */
+    text-decoration: none;
+}
+
+/* Here is some hover magic */
+a.real:hover:not(.logo) {
+    background: #263238;
+}
+
+.logo {
+    background: #015798;
+}
+
+.fa-building {
+    color: #ffeb3b;
+}
+.navbar {
+    background-color: #3b5998;
+    height: 90px;
+    /* review this */
+    overflow: hidden;
+}
+
+#logo {
+    color: white;
+    /* not this
+    float: right;
+    */
+    float: left;
+    text-align: center;
+    /* review what the affect, top/bottom and left/right */
+    padding: 22px 60px;
+}
+
+/* targets all a inside navbar id */
+.navbar a {
+    /* floating right reverses the order, but why??? */
+    float: right;
+    padding: 33px 60px;
+    color: #f2f2f2;
+    text-align: center;
+    /* removes hyperlink underlines */
+    text-decoration: none;
+    font-size: 20px;
+}
+
+/* this is new */
+a:hover {
+    background-color: forestgreen;
+    color: burlywood;
+}
