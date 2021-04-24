@@ -10,6 +10,16 @@ const logger = require('morgan');
 // app.use(logger, 'dev'); this throws a nasty error
 app.use(logger('dev'));
 
+// add this so we load the index from the client directory
+app.use(express.static('../client'));
+
+// try to use bodyparser that comes with express, else install it
+const bodyParser = require('body-parser');
+// parse appliation/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
+// parse application/json
+app.use(bodyParser.json());
+
 // import object from fakeData.js can also just use ./fakeData
 // toDoArray: array_of_objects
 const {toDoArray} = require('./fakeData.js');
@@ -35,6 +45,10 @@ app.get('/todos', (req, res) => {
 // And get only allows a limited number of characters in the URL
 // Example below won't solve anything, just for demo
 app.post('/todos', (req, res) => {
+
+	// After installing bodyParser - needed to process POST from client
+	console.log(body.req);	
+
 	// create a new to do array
 	let newToDoArray = {
 		id: 4,
