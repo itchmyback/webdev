@@ -46,13 +46,15 @@ $("input").keypress(function (event) {
 	            // `<li>${todoItem}<span><i class='far fa-trash-alt'></i></span></li>`
 	            `<li>${newTodo.description}<span><i class='far fa-trash-alt'></i></span></li>`
 	             );
+		    $("input").val("");
 	    })
 	    .catch(function(error){
 	        console.error("Issues with CREATING data on backend");
 	    })
 
 	// set info
-    $("input").val("");
+	// this gets moved into function(newTodo)
+	//    $("input").val("");
     }
 });
 
