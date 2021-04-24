@@ -10,15 +10,18 @@ const logger = require('morgan');
 // app.use(logger, 'dev'); this throws a nasty error
 app.use(logger('dev'));
 
-// add this so we load the index from the client directory
-app.use(express.static('../client'));
+// UPDATE -- bodyParser is indeed integrated directly into express and is called rhrough express
 
-// try to use bodyparser that comes with express, else install it
-const bodyParser = require('body-parser');
+// So bodyparser doesn't need to be required
+// // try to use bodyparser that comes with express, else install it
+// const bodyParser = require('body-parser');
 // parse appliation/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: false }));
 // parse application/json
-app.use(bodyParser.json());
+// app.use(bodyParser.json());
+app.use(express.json());
+
 
 // import object from fakeData.js can also just use ./fakeData
 // toDoArray: array_of_objects
