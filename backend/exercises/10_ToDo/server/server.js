@@ -32,11 +32,18 @@ const {toDoArray} = require('./fakeData.js');
 
 
 // ROUTES
+
+// Add this so we load the index from the client directory
+// This replaces the root route
+app.use(express.static('../client'));
+
+/*
 app.get('/', (req, res) => {
 	// console.log(toDoArray);
     res.send("I am GROUTE!!!");
 //    res.render('home');
 })
+*/
 
 // Read - GET
 app.get('/todos', (req, res) => {
