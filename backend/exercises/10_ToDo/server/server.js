@@ -47,7 +47,9 @@ app.get('/', (req, res) => {
 
 // Read - GET
 app.get('/todos', (req, res) => {
-	res.json(toDoArray);
+	// res.json(toDoArray);
+	// what is this status 264?
+	res.status(264).json(toDoArray);
 })
 
 // Create - POST
@@ -57,17 +59,20 @@ app.get('/todos', (req, res) => {
 app.post('/todos', (req, res) => {
 
 	// After installing bodyParser - needed to process POST from client
-	console.log(body.req);	
+	console.log(req.body);	
 
 	// create a new to do array
 	let newToDoArray = {
 		id: 4,
-		description: "Buy more stuff",
+		// description: "Buy more stuff",
+		description: req.body.description,
 		isComplete: false
 	}	
 	// push new object element to 
 	toDoArray.push(newToDoArray);
-	res.json(toDoArray);
+	// oops, argument below needs to be newToDoArray
+	// res.json(toDoArray);
+	res.json(newToDoArray);
 })
 
 // Delete - DELETE
