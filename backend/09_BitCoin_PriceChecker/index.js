@@ -12,28 +12,76 @@ app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
 // API
-//  https://api.lyrics.ovh/v1/Coldplay/Adventure of a Lifetime
 
+//  https://api.lyrics.ovh/v1/Coldplay/Adventure of a Lifetime
 const baseUrl = 'https://api.lyrics.ovh/v1';
 
-// so request needs to be installed
+// REQUEST - this app will use Request (vs Node-Fetch or Needle)
+// documentation says request is deprecated
 const request = require('request');
 
+  // steps for http request
+  // making a request using endpoint
+  // receive a response - generally json
+    // parse it!!!
+  // do something
+  // error handling
+
+
 // ROUTES
+
+// home route
 app.get('/', (req, res) => {
   res.render('home');
 })
 
+// getbitcoinprice route
 app.get('/getbitcoinprice', (req, res) => {
-  const ep = 'https://api.coindesk.com/v1/bpi/currentprice.json';
+	const endpoint = 'https://api.coindesk.com/v1/bpi/currentprice.json';
+//	console.log(req);
+	// for input = 23, output is
+	/*
+	params: {},
+  	query: { price: '23' },
+	*/
+//  	console.log(req.query);
+	// { price: '23' }
 
-  console.log(req.query);
-//  request(endpoint, (error, response, body) => {
-
-//  })
-  res.render('bitcoin');
+  // The way request works -
+  // positional arguments
+  request(endpoint, (error, response, body) => {
+    if(!error && response.statusCode == 200) {
+	    // convert to JSON
+	    // return response.json()
+	    let parsedData = JSON.parse(body); // use with request and needle
+//	    console.log(parsedData); // make sure it's okay
+		// output
+		/*
+		{ time: {}, disclaimer: '', chartName: '', bpi: { USD: {}, GBP: {}, EUR: {} } }
+		*/
+//		console.log(parsedData.bpi);
+		// output
+		/*
+		{ USD: {}, GBP: {}, EUR: {} }
+		*/
+//		console.log(parsedData.bpi.USD);
+		// output
+		/*
+		{ code: 'USD', ... , rate_float: 50346,1311 }
+		*/
+		let usdprice = parsedData.bpi.USD.rate_float; // an object
+		// get value from usdprice object
+		res.render('bitcoin', {usdprice});
+//	    res.render('bitcoin', {data});
+//	    res.render('results', {data, artist, title});
+    } else {
+      res.render('error', {error: "No lyrics found"});
+    }
+  })
+  // res.render('bitcoin');
 })
 
+// old routes
 app.get('/getLyrics', (req, res) => {
   console.log(req);
   // output is
