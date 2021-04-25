@@ -89,6 +89,9 @@ $(document).ready(function() {
     		$("ul").append(
 	       	 	//`<li>${todoItem}<span><i class='far fa-trash-alt'></i></span></li>`
    	    	 	`<li>${todo.description}<span><i class='far fa-trash-alt'></i></span></li>`
+				// THIS ERROR HERE - caused issues with UPDATE
+   	    	 	// `<li data-id=${todo} class=${finished}>${todo.description}<span><i class='far fa-trash-alt'></i></span></li>`
+   	    	 	`<li data-id=${todo.id} class=${finished}>${todo.description}<span><i class='far fa-trash-alt'></i></span></li>`
        	 	);
 		});
     }) 
