@@ -10,7 +10,7 @@ const logger = require('morgan');
 // app.use(logger, 'dev'); this throws a nasty error
 app.use(logger('dev'));
 
-// UPDATE -- bodyParser is indeed integrated directly into express and is called rhrough express
+// UPDATE -- bodyParser is indeed integrated directly into express and is called through express
 
 // So bodyparser doesn't need to be required
 // // try to use bodyparser that comes with express, else install it
