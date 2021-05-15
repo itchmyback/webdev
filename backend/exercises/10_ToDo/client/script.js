@@ -58,15 +58,18 @@ $('input').keypress(function (event) {
 	    })
 	    .then(function(newTodo) {
 	        // do something
-	        // below is the original code
+			// Add in logic to determine if item is complete or not
+			// Why do we need this for CREATE? It's optional, because by default new items are not completed.
+			let finished = newTodo.isComplete ? "completed" : "";
 
 	        $('ul').append(
 	            // `<li>${todoItem}<span><i class='far fa-trash-alt'></i></span></li>`
 
 				// modify with data attributes - data attributes add meta data to the html
 				// by adding in data-id
-	            `<li>${newTodo.description}<span><i class='far fa-trash-alt'></i></span></li>`
-	            // `<li data-id=${newTodo.id}>{newTodo.description}<span><i class='far fa-trash-alt'></i></span></li>`
+	            // `<li>${newTodo.description}<span><i class='far fa-trash-alt'></i></span></li>`
+	            // `<li data-id=${newTodo.id}>${newTodo.description}<span><i class='far fa-trash-alt'></i></span></li>`
+                `<li data-id=${newTodo.id} class=${finished}>${newTodo.description}<span><i class='far fa-trash-alt'></i></span></li>`
 	             );
 		    $('input').val("");
 	    })
@@ -212,6 +215,7 @@ $('ul').on('click', 'span', function (event) {
 
 	// So, the "id" is going to be generated at Create or Read
 	// NOTE - it is not the HTML id
+
 	// let's add in stopPropogation event for bubbling, whatever that is
 	event.stopPropagation();
 	let thisId = $(this).parent().data('id');
