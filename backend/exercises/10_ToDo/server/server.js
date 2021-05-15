@@ -15,7 +15,8 @@ app.use(logger('dev'));
 // So bodyparser doesn't need to be required
 // // try to use bodyparser that comes with express, else install it
 // const bodyParser = require('body-parser');
-// parse appliation/x-www-form-urlencoded
+
+// parse application/x-www-form-urlencoded
 // app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.urlencoded({ extended: false }));
 // parse application/json
