@@ -1,0 +1,57 @@
+-- What if you don't have ready access to the database?
+-- SELECT *
+-- FROM employees;
+
+-- COUNT
+SELECT COUNT(*)
+FROM employees;
+
+-- How many managers?
+SELECT COUNT(manager_id)
+FROM employees;
+-- unexpected amount, because the "negative" managers are counted
+-- does not count NULL
+
+-- What the data means is that the manager_id is who the employee's manager is
+-- So that means a manager_id over multiple employees gives duplicates
+-- Must understand the data
+-- Use DISTINCT at first, but where do we wrap in COUNT?
+SELECT DISTINCT(manager_id)
+FROM employees
+WHERE manager_id IS NOT NULL;
+
+-- then use COUNT 
+SELECT COUNT(DISTINCT manager_id)
+FROM employees;
+-- and then we don't need this because of COUNT
+-- WHERE manager_id IS NOT NULL;
+
+-- NULL exercise, along with LIMIT
+SELECT first_name, last_name, salary, commission_pct
+FROM employees
+LIMIT 10;
+
+-- get around the NULL values using COALESCE, assign temp VALUES
+SELECT lname, team_id
+FROM players;
+
+SELECT lname, team_id
+FROM players
+WHERE team_id IS NULL;
+
+SELECT lname, COALESCE(team_id, 5)
+FROM players
+WHERE team_id IS NULL;
+
+-- tricky problem - add 10% commision to all, but how to handle NULL? needs to be assigned to 0 first
+-- This only adds 0.10 to NULL VALUES
+-- Because COALESCE only targets NULLs?
+SELECT first_name, last_name, salary,
+COALESCE(commission_pct, + 0.10)
+FROM employees;
+
+-- solution
+-- So, COALESCE looks just for NULLs?
+SELECT first_name, last_name, salary,
+COALESCE(commission_pct, 0) + 0.10
+FROM employees;

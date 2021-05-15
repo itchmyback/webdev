@@ -1,0 +1,79 @@
+ SELECT country_id,
+         region_id
+ FROM countries
+ WHERE region_id < 3;
+
+-- this will create duplicate entries of department_id because it exists among employees
+SELECT department_id
+FROM employees;
+
+-- DISTINCT on two COLUMNS
+-- basic SELECT won't work
+-- the global scope of manager_id effectively overwrites the DISTINCTness of department_id
+SELECT DISTINCT department_id, manager_id
+FROM employees;
+
+SELECT DISTINCT department_id
+FROM employees;
+
+-- WHERE
+SELECT employee_id,
+        last_name,
+        salary,
+        commission_pct
+FROM    employees
+-- results in NULLS
+WHERE commission_pct NOTNULL
+-- IS NOT NULL
+-- and then add
+OR (salary > 10000 AND hire_date > '31-Dec-98');
+
+-- Wrong way to set condition 
+-- SELECT employees
+-- FROM department_id = 80;
+
+-- Correct way to set condition, using WHERE
+SELECT *
+FROM employees
+WHERE department_id = 80;
+
+SELECT first_name, salary
+FROM employees
+WHERE salary > 80000;
+
+-- pattern match with LIKE
+SELECT first_name, last_name
+FROM employees
+-- double quotes don't work as simple string notation
+-- WHERE last_name LIKE "King";
+WHERE last_name LIKE 'King';
+
+-- Wild Card SEARCH
+SELECT first_name, last_name
+FROM employees
+WHERE last_name LIKE 'K%';
+
+SELECT first_name, last_name
+FROM employees
+WHERE last_name LIKE 'K_ng';
+
+SELECT first_name, last_name
+FROM employees
+WHERE first_name LIKE 'El%';
+
+SELECT first_name, last_name
+FROM employees
+-- these don't match?
+-- WHERE first_name LIKE 'El[a-z]%';
+-- WHERE first_name LIKE 'El[el]%';
+-- WHERE first_name LIKE 'El[l]%';
+-- WHERE first_name LIKE 'El[l]en';
+WHERE first_name LIKE 'El%n';
+
+-- Simple MIN/MAX, but selecting more columns is trickier
+SELECT MAX(salary)
+FROM employees;
+
+-- Simple COUNT, but selecting more columns is trickier
+SELECT COUNT(first_name)
+FROM employees;

@@ -1,0 +1,136 @@
+SELECT NOW();
+
+-- DATE and TIME
+-- looks like it defaults the time to midnight
+SELECT CURRENT_DATE;
+
+SELECT CURRENT_DATE + 7 * 30 AS "Date ~ 7 Months Later";
+
+SELECT CURRENT_DATE + INTERVAL '7' MONTH AS "Date 7 Months Later";
+
+SELECT TO_CHAR(CURRENT_DATE + INTERVAL '7' MONTH, 'DD-Mon-YYYY hh:mi am'); -- format mask
+
+SELECT CURRENT_DATE + 4 / 24 AS "Time 4 hours later"; -- this doesn't work, the intentions seems to be to add a fraction of a day
+-- or
+SELECT CURRENT_DATE + INTERVAL '4' HOUR "Time 4 hours later";
+
+SELECT TO_CHAR(CURRENT_DATE + 365 * 3, 'DD-Mon-YYYY hh:mi am') AS "3 Years Later";
+
+-- exercise
+-- how many days have I lived?
+SELECT CURRENT_DATE - '1978/02/23';
+
+SELECT CURRENT_DATE - TO_DATE('1978/2/23', 'YYYY/MM/DD');
+
+SELECT first_name, last_name, salary + COALESCE(salary * commission_pct, 0) AS "Comp"
+FROM employees;
+
+SELECT first_name, last_name, 
+TO_CHAR(
+    salary + COALESCE(salary * commission_pct, 0), '99,999,999') AS "Comp"
+-- What is this TO_CHAR 99,999,999 thing? It made it an integer
+FROM employees;
+
+SELECT first_name, last_name, 
+TO_CHAR(
+    salary + COALESCE(salary * commission_pct, 0), '$99,999,999.00') AS "Comp"
+-- What is this TO_CHAR 99,999,999 thing? It made it an integer - format mask thing again
+FROM employees;
+
+-- exercise
+SELECT *
+FROM hr.employees
+WHERE department_id = '110';
+
+SELECT *
+FROM hr.employees
+WHERE last_name = 'King';
+
+SELECT *
+FROM hr.employees
+WHERE last_name LIKE 'K%';
+
+SELECT first_name || ' ' || last_name AS "Full Name"
+FROM hr.employees
+WHERE last_name = 'King';
+-- WHERE UPPER(last_name) = 'KING';
+-- WHERE UPPER(last_name) = UPPER('King');
+-- WHERE LOWER(last_name) = 'king';
+
+-- SUBQUERY
+-- subquery must only return 1 column
+-- What about ties? salary >= tie
+SELECT employee_id, first_name
+FROM hr.employees
+WHERE salary >= (
+    SELECT AVG(salary)
+    FROM employees
+);
+
+SELECT employee_id, first_name
+FROM hr.employees
+WHERE salary >= (
+-- this will fail
+--    SELECT salary FROM hr.employees
+    SELECT MAX(salary) FROM hr.employees
+    WHERE last_name = 'Fay'
+);
+
+-- spanning two tables, no JOINs, because location_id is common
+SELECT department_name
+FROM hr.departments
+-- WHERE location_id = (
+WHERE location_id IN (
+    SELECT location_id FROM hr.locations
+    WHERE country_id = 'UK'
+);
+
+-- exercise
+SELECT *
+FROM locations;
+
+SELECT *
+FROM departments;
+
+-- double sub-query
+SELECT first_name || ' ' || last_name
+FROM hr.employees
+-- this returns multiple entries because multiple departments in Seattle
+-- WHERE department_id = (
+WHERE department_id IN (
+    SELECT department_id
+    FROM hr.departments
+--    WHERE location_id = (
+    WHERE location_id IN (
+        SELECT location_id
+        FROM hr.locations
+        WHERE city = 'Seattle'
+    )
+);
+
+-- JOINS
+-- notice the alias notation of x.xyz
+SELECT p.productid, p.description, s.saledate, s.amount
+FROM sales AS s
+JOIN products p
+ON (p.productid = s.productid);
+
+-- USING?
+SELECT p.productid, p.description, s.saledate, s.amount
+FROM sales AS s
+JOIN products p
+USING (productid);
+
+SELECT COUNT(hire_date > '03/15/2008') FROM employees;
+
+SELECT first_name, last_name FROM employees WHERE last_name LIKE '[K]%';
+
+SELECT last_name, first_name FROM employees WHERE last_name LIKE 'F%' OR last_name LIKE 'M%';
+
+SELECT first_name || ' ' || last_name FROM employees WHERE LOWER(first_name) LIKE 'k%' OR LOWER(last_name) LIKE 'k%' AND job_id != 'AD_PRES';
+
+-- SELECT TO_CHAR( (CURRENT_DATE - hire_date) / 365 )
+SELECT EXTRACT(YEAR FROM CURRENT_DATE) - EXTRACT(YEAR FROM hire_date)
+FROM employees;
+
+SELECT first_name || ' ' || last_name, TO_CHAR(hire_date, 'Mon-DD-YYYY') FROM employees WHERE ( EXTRACT(YEAR FROM CURRENT_DATE) - EXTRACT(YEAR FROM hire_date) ) > 20 OR EXTRACT(MONTH FROM hire_date) = 06 AND job_id != 'AD_PRES';

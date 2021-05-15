@@ -1,0 +1,114 @@
+-- 'GROUP BY' will probably drive most of these lessons as well as "SubQueries"
+-- Other topics - row_number
+-- Sample problems from the internet as well as interview
+
+-- DISTINCT on multiple columns
+-- Although duplicate values can appear in a given column, each row is unique, so the combination is unique
+SELECT DISTINCT department_id, manager_id
+FROM employees;
+
+-- Aggregate functions - min/max, count, sum, avg - 
+-- a function where the values of multiple rows are grouped together as input on certain criteria to form a single value of more significant meaning.
+
+SELECT COUNT (DISTINCT salary)
+FROM employees;
+
+-- ERROR - first_name must appear in the GROUP BY clause or be used in an aggregate function
+-- SELECT first_name, MAX(salary)
+-- FROM employees;
+
+-- Use GROUP BY with aggregate function
+SELECT first_name, MAX(salary)
+FROM employees
+GROUP BY first_name
+LIMIT 6;
+-- Results are not as expected, returned all the employees and their max salary
+-- Want the max salary 
+
+-- So the above is good for something like finding the max value in a group such as department_id
+SELECT department_id, MAX(salary) AS max_salary
+FROM employees
+GROUP BY department_id
+ORDER BY department_id;
+
+-- FETCH
+SELECT department_id, MAX(salary) AS max_salary
+FROM employees
+GROUP BY department_id
+-- FETCH FIRST ROW ONLY;
+-- WOW, can get second row this way
+OFFSET 1 ROW
+-- FIRST or NEXT, interchangable
+-- FETCH FIRST ROW ONLY;
+-- FETCH NEXT ROW ONLY;
+-- FETCH NEXT 1 ROW ONLY;
+-- These fetch starting at the offset row 2
+-- NEXT 1 is kind of tricky, if you truly want the NEXT 1, probably need to do it via OFFSET
+
+-- But this fetches the next 2 rows, starting at row 3
+FETCH NEXT 2 ROW ONLY;
+
+-- Back to selecting the max salary of all employees and displaying with other COLUMNS
+-- Need to use Sub-Query
+-- NOTE - this will return ties
+-- Question - why isn't GROUP BY required here?
+SELECT first_name, salary AS max_salary
+FROM hr.employees
+-- Sub-Query
+WHERE salary = (
+    SELECT MAX(SALARY)
+    FROM employees
+);
+
+-- Below doesn't work
+-- SELECT DISTINCT salary
+-- FROM employees
+-- WHERE 2 = SELECT COUNT(DISTINCT salary)
+-- FROM employees
+-- WHERE e1.salary <= e2.salary;
+
+-- This doesn't work because of improper ROW_SELECT
+-- SELECT MIN(salary)
+-- SELECT salary
+-- FROM (SELECT DISTINCT salary
+-- FROM employees
+-- ORDER BY salary DESC)
+-- AS xyz
+-- WHERE row_number() <= 2;
+
+-- this works - makes use of ROW_NUMBER()
+SELECT first_name, salary, 
+    ROW_NUMBER() OVER (ORDER BY salary DESC)
+FROM employees;
+
+-- this doesn't work
+-- SELECT first_name, salary, 
+-- ROW_NUMBER() OVER (ORDER BY salary DESC)
+-- FROM employees
+-- WHERE row_number = 2;
+
+-- the problem is the window function row_number in WHERE
+SELECT first_name, salary, rn -- rn is an alias for row_number
+-- outer from
+FROM (SELECT ROW_NUMBER() OVER (ORDER BY salary DESC) AS rn,
+    first_name, salary
+    -- When doing sub-query inside FROM, need alias for outer FROM
+    FROM employees
+) AS from_alias
+WHERE rn = 2;
+
+
+-- What are we trying to do here?
+-- It seems like this was accomplished above with WHERE = subquery
+SELECT *
+FROM employees
+-- aggregate functions are not allowed in WHERE
+-- but is that true? see WHERE = subquery(MAX)
+-- -- WHERE first_name IN ('Michael'
+-- -- WHERE first_name IN (''
+-- must use HAVING to use aggregate functions
+HAVING department_id IN (
+    SELECT MAX(department_id)
+    FROM employees
+    GROUP BY department_id
+);

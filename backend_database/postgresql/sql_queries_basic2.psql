@@ -1,0 +1,128 @@
+-- Aggregate Functions
+-- single row functions vs group functions
+
+-- aggregate functions - min, max, avg
+SELECT MAX(salary)
+FROM employees;
+
+SELECT MIN(salary)
+FROM employees;
+
+SELECT AVG(salary)
+FROM employees;
+
+-- again, adding other columns with aggregate functions
+-- requires GROUP BY
+SELECT last_name, MAX(salary)
+FROM employees
+GROUP BY last_name
+LIMIT 10;
+
+-- again, not what we want - we want to find the guy with the max salary
+SELECT last_name
+FROM hr.employees
+WHERE salary = (
+    SELECT MAX(salary)
+    FROM employees
+);
+
+-- Sorting with ORDER BY
+SELECT last_name, first_name, job_id, salary
+FROM hr.employees
+ORDER BY last_name ASC, first_name DESC;
+
+SELECT *
+FROM locations
+ORDER BY city;
+
+SELECT *
+FROM locations
+ORDER BY country_id, postal_code DESC;
+
+-- STRING FUNCTIONS
+-- recall, || is concatenation
+SELECT 'Hello ' || 'Dolly';
+
+SELECT SUBSTRING('Hello Dolly!'
+FROM 1 FOR 5);
+-- returns Hello
+
+SELECT CHAR_LENGTH('Hello Dolly!');
+
+-- those are 'L' not 'ones'
+SELECT POSITION('ll' IN 'Hello Dolly!');
+
+-- Number functions
+-- +/- sign is direction from decimal
+SELECT ROUND(453.141592, 4);
+SELECT TRUNC(453.141592, 4);
+SELECT ROUND(453.141592, 1); -- 453.1
+SELECT ROUND(453.141592, 0); -- 453
+SELECT ROUND(453.141592, -1); -- 450
+SELECT TRUNC(453.141592, -2);
+SELECT MOD(16, 5);
+SELECT MOD(16, 5) Remains; -- remains is an alias
+-- could also do AS remains
+
+-- Conversion Functions
+-- including case statement
+
+-- date
+-- number(precision, scale)
+
+SELECT hire_date
+FROM employees
+WHERE employee_id = 200;
+
+-- but what if you only wanted day or month or year?
+-- use extract
+-- EXTRACT(field FROM source)
+-- SELECT EXTRACT(
+--    DAY FROM hire_date,
+--    MONTH FROM hire_date,
+--    YEAR FROM hire_date)
+SELECT
+EXTRACT(YEAR FROM hire_date),
+EXTRACT(MONTH FROM hire_date),
+EXTRACT(DAY FROM hire_date)
+FROM employees
+WHERE employee_id = 200;
+
+-- CASE - two forms
+-- CASE EXTRACT(YEAR FROM hire_date)
+--     WHEN 2001 THEN 'hired 2001',
+--     WHEN 2002 THEN 'hired 2002'
+--     ELSE 'Unknown'
+-- END
+
+-- or this one
+
+-- CASE
+--     WHEN EXTRACT(YEAR FROM hire_date) < 2001  THEN 'Senior employee',
+--     WHEN EXTRACT(YEAR FROM hire_date) >= 2001 AND hired_date <= 2007 THEN 'Mid employee',
+--     WHEN EXTRACT(YEAR FROM hire_date) > 2007  THEN 'Junior employee'
+--     ELSE 'Unknown'
+-- END
+
+-- skeleton
+-- SELECT first_name || ',' || last_name AS "Full Name",
+--     EXTRACT(year FROM hire_date) AS "Year Hired"
+--     CASE 
+--     END
+-- FROM employees;
+
+SELECT first_name || last_name AS "Full Name",
+    -- need comma before CASE b/c it's still part of select
+    EXTRACT(YEAR FROM hire_date) AS "Year Hired",
+    CASE
+    -- but no commas in case statements
+        WHEN EXTRACT(YEAR FROM hire_date) < 2001  THEN 'Senior'
+    -- WHEN EXTRACT(YEAR FROM hire_date) >= 2001 AND hired_date <= 2007 THEN 'Mid employee'
+        -- BETWEEN is inclusive
+        WHEN EXTRACT(YEAR FROM hire_date) BETWEEN 2001 AND 2007 THEN 'Mid'
+        WHEN EXTRACT(YEAR FROM hire_date) > 2007  THEN 'Junior'
+    ELSE 'Unknown'
+    END AS "Seniority"
+FROM employees
+-- discussion on the true value of this sorting
+ORDER BY "Full Name", "Seniority";

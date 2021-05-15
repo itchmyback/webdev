@@ -1,0 +1,73 @@
+SELECT *
+FROM employees;
+
+-- to emulate problem, let's take a max value item, like salary
+-- per redundant entry combo like department id + commission_pct
+
+-- NOTE - there are two methods here for using aggregate functions 
+-- subquery and GROUP BY
+    
+-- with sub-query, the salary is selected from a single SELECT on max salaries
+SELECT department_id, salary AS max_salary
+FROM hr.employees
+WHERE salary = (
+    SELECT MAX(salary)
+    FROM employees
+);
+
+-- with group by, the departments are group first,
+-- and then the max salary is selected per group
+SELECT department_id, MAX(salary) AS max_salary
+FROM hr.employees
+GROUP BY department_id
+ORDER BY department_id;
+
+
+-- tried and succeeded to GROUP BY with multiple fields
+-- this increases the number of rows because there are more unique entries now
+SELECT department_id, commission_pct, MAX(salary) AS max_salary
+FROM hr.employees
+GROUP BY department_id, commission_pct
+ORDER BY department_id;
+
+-- next, how to get max_salary to not display
+-- try sub-query
+-- SO, interesting results
+-- it's still results in the absolute maximum salary displayed, but
+-- field in WHERE condition does not have to be displayed
+-- so maybe field in sub-query does not have to be displayed?
+SELECT department_id, commission_pct 
+FROM hr.employees
+WHERE salary = (
+    SELECT MAX(salary)
+    FROM employees
+)
+GROUP BY department_id, commission_pct
+ORDER BY department_id;
+
+-- try sub-query on FROM?
+-- YES!!! correct results and does not display sub-query SELECT
+SELECT department_id, commission_pct 
+FROM (
+    SELECT department_id, commission_pct, MAX(salary) AS max_salary
+    FROM hr.employees
+    GROUP BY department_id, commission_pct
+) AS xyz -- must alias outer FROM
+ORDER BY department_id;
+
+-- change up using manager_id instead of commission_pct, go ahead and throw in last name
+SELECT department_id, manager_id, last_name, MAX(salary) AS max_salary
+FROM hr.employees
+GROUP BY department_id, manager_id, last_name
+ORDER BY department_id;
+
+-- remove salary column again
+SELECT department_id, manager_id, last_name
+FROM (
+    SELECT department_id, manager_id, last_name, MAX(salary)
+    FROM hr.employees
+    GROUP BY department_id, manager_id, last_name
+) AS xyz
+ORDER BY department_id;
+
+-- okay, so this doesn't quite work when you have to throw in that third value
