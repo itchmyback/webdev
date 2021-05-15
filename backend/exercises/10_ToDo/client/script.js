@@ -59,6 +59,7 @@ $('input').keypress(function (event) {
 	    .then(function(newTodo) {
 	        // do something
 	        // below is the original code
+
 	        $('ul').append(
 	            // `<li>${todoItem}<span><i class='far fa-trash-alt'></i></span></li>`
 
@@ -209,6 +210,8 @@ $('ul').on('click', 'span', function (event) {
 	// how to get id?
 	// let endpoint = `${baseUrl}/todos/id`;
 
+	// So, the "id" is going to be generated at Create or Read
+	// NOTE - it is not the HTML id
 	// let's add in stopPropogation event for bubbling, whatever that is
 	event.stopPropagation();
 	let thisId = $(this).parent().data('id');
