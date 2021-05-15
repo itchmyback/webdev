@@ -5,7 +5,14 @@
 // More jquery
 // $(this) refers to back to the DOM query element
 // click() is a jQuery method
-// .data("key")
+
+// data-attributes - add meta data to html, so it's user defined, not from server
+// added inside tags and take the form data-'something'
+
+// data-atrribrutes are read with.data('key')
+
+// So if data attribute data-id is defined, it is then read back with data('id')
+// Does this mean data-attribute is data-key and read back with data('key')?
 
 const baseUrl = 'http://localhost:3000';
 
