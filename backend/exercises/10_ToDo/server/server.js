@@ -55,6 +55,9 @@ app.get('/todos', (req, res) => {
 	res.status(264).json(toDoArray);
 })
 
+// global var for generating new ID, start at 4 and each POST will increment
+let newId = 4;
+
 // Create - POST
 // Need to use POST because can potentially show private data in the http request
 // And get only allows a limited number of characters in the URL
@@ -66,7 +69,9 @@ app.post('/todos', (req, res) => {
 
 	// create a new to do array
 	let newToDoArray = {
-		id: 4,
+		// Hard coding 4 will always have 4 get generated
+//		id: 4,
+		id: newId++,
 		// description: "Buy more stuff",
 		description: req.body.description,
 		isComplete: false
