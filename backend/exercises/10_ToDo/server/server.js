@@ -17,6 +17,7 @@ app.use(logger('dev'));
 // const bodyParser = require('body-parser');
 
 // parse application/x-www-form-urlencoded
+// urlencoded allows special characters to be decoded from encoded URL
 // app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.urlencoded({ extended: false }));
 // parse application/json
@@ -36,6 +37,7 @@ const {toDoArray} = require('./fakeData.js');
 
 // Add this so we load the index from the client directory
 // This replaces the root route
+// .static must be an autoload, because it's used with /views and /public
 app.use(express.static('../client'));
 
 /*
