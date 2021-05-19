@@ -6,9 +6,13 @@
 -- INSERT INTO employees (employee_id, first_name, last_name, email, phone_numeric, hire_date, job_id, salary, commission_pct, manager_id, department_id)
 -- VALUES (868, 'Johnny', 'Nguyen', 'johnny@email', 512-555-5555, '05/12/2021', 'IT_PROG', 10, 0.1, 100, 60);
 
+-- INSERT INTO employees (employee_id, first_name, last_name, email, phone_numeric, hire_date, job_id, salary, commission_pct, manager_id, department_id)
+-- VALUES (1234, 'Twin', 'Nguyen', 'twin@email', 713-555-5555, '05/15/2020', 'IT_PROG', 505404, 0.1, 100, 60);
+
 UPDATE employees
-SET phone_numeric = '512-555-5555'
-WHERE employee_id = 868; 
+-- SET phone_numeric = '512-555-5555'
+SET salary = 88000
+WHERE employee_id = 334; 
 
 -- DELETE FROM employees WHERE employee_id = 86753;
 
