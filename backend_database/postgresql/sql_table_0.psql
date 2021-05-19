@@ -1,0 +1,59 @@
+SELECT *
+FROM employees
+LIMIT 2;
+
+-- SELECT first_name || ' ' || last_name, DATE_PART('DD', CURRENT_DATE - hire_date)
+SELECT first_name || ' ' || last_name, Date_Part('day', CURRENT_DATE), CURRENT_DATE - hire_date
+FROM employees
+ORDER BY 2;
+
+-- Entities - things that we want to store
+-- cardinality - must have
+-- optionality - may have
+
+-- example
+    -- customer table may have address table
+    -- but if there is an address table, it must be linked to a customer table
+
+-- Keys
+-- Primary Key (PK)
+-- Foreign Key (FK)? -- A foreign key in one table points to a primary key in another table
+
+-- SCHEMAS
+
+-- example
+    -- a department may have 1 or many employees, btequalimage
+    -- an employee may only have 1 department
+
+
+-- ?
+-- employee has manager_id (their boss)
+-- employee has a department, which also has a main boss, by manager_id (department boss)
+-- so the employee could have 2 bosses
+
+-- Normalization
+-- process of making your database design efficient
+-- First Normal Form => Second Normal Form => Third Normal Form
+-- 1NF => 2NF => 3NF
+
+-- goals - remove redundancy, make storage and retrieval efficent, make changing data easy and efficient
+
+-- 1NF - no repeating values and no repeating GROUPS
+-- 2NF - no no-key values based on just part of a composite KEY
+        -- what's a composite primary key? 2 or more keys that make up a primary key
+-- 3NF - no non-key values based on other non-key values
+
+-- 2NF - course and date (for a class) - make up a primary key, availability would be non-key field related to that primary key
+    -- availability is not just based on course or date alone
+
+    -- so what to do when there is that situation? ie a course title or course description, which only depends on course
+    -- break into another table
+
+-- 3NF - which non-key field values do not really depend on course id?
+    --  Room
+        -- However, Room depends on capacity (a non-key value)     
+        -- Solution -- break out into another table again
+
+-- Project - design a rational database
+    -- need a tool - Vertabelo - web based database design tool
+    -- use a student link, use acc email

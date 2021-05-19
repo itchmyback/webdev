@@ -1,0 +1,63 @@
+-- Rank() window function
+-- PARTITION BY - seems similar to GROUP_BY
+-- Difference
+    -- GROUP_BY is strict about what is displayed
+    -- PARTITION_BY allows row details to be displayed regardless of being partitioned, but can give redundancy
+-- from https://learnsql.com/blog/difference-between-group-by-partition-by/
+
+-- learn from
+-- https://www.sqlshack.com/overview-of-sql-rank-functions/
+
+-- Start off with Row_Number()
+SELECT employee_id, last_name, salary, 
+       Row_Number() OVER (ORDER BY salary DESC) AS RowNumber
+FROM employees;
+
+-- Rank By
+SELECT employee_id, last_name, salary, 
+--       Rank() OVER(ORDER BY salary DESC) AS Rank
+-- Without PARTITION BY, Rank() is done over all rows
+       Rank() OVER (PARTITION BY last_name ORDER BY salary DESC) AS Rank
+FROM employees
+ORDER BY last_name, Rank;
+
+-- Compare to GROUP BY
+SELECT last_name, MAX (salary) AS max_salary
+FROM employees
+GROUP BY last_name
+-- ORDER BY salary;
+ORDER BY last_name;
+-- output:
+-- Nguyen 505404.00
+
+-- Compare to PARTITION BY
+SELECT last_name, 
+    MAX (salary) OVER (PARTITION BY last_name ORDER BY last_name) AS max_salary
+FROM employees;
+-- output:
+-- Nguyen 505404.00
+-- Nguyen 505404.00
+
+-- Compare to PARTITION BY again
+SELECT last_name, first_name,
+    MAX (salary) OVER (PARTITION BY last_name ORDER BY last_name) AS max_salary
+FROM employees;
+-- output:
+-- Nguyen, Twin 505404.00
+-- Nguyen, John 505404.00
+
+SELECT *
+FROM (
+    SELECT employee_id, last_name, salary,
+--        Rank() OVER (PARTITION BY employee_id ORDER BY salary DESC) AS Rank
+        Rank() OVER (PARTITION BY last_name ORDER BY salary DESC) AS Rank
+    FROM employees
+) AS from0
+WHERE Rank = 1;
+--    SELECT MyPK, fmgcms_cpeclaimid, createdon,  
+--         Rank() over (Partition BY fmgcms_cpeclaimid order by createdon DESC) as Rank
+--     from Filteredfmgcms_claimpaymentestimate 
+--     where createdon < 'reportstartdate' 
+-- ) tmp
+-- WHERE Rank = 1
+
