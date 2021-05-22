@@ -7,3 +7,15 @@ Example Output: quick
 
 Note: returning any of the longest words is acceptable, you don't have to return all of them.
 Here in this sentence there are 3 longest words .. quick, brown and jumps
+
+# str split into word arrays
+# compare array lengths
+
+var snapSentence = "A quick brown fox jumps over the lazy dog";
+
+function longestWord( strParam ) {
+    let wordArr = strParam.split( " " );
+    console.log( wordArr );
+};
+
+longestWord(snapSentence);
