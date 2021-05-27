@@ -19,3 +19,5 @@ console.log(arrParam[1] + ", " + arrParam[arrParam.length - 2]);
 }
 
 secondEx( snapArr );
+
+<!-- Correct! -->

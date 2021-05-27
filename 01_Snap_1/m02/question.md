@@ -9,3 +9,5 @@
 
 ## Answer:
 4.
+
+<!-- Incorrect, you would get the image from the body of the request -->

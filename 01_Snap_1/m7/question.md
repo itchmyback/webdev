@@ -11,6 +11,7 @@
 2.
 4.
 
+<!-- Correct -->
 ### MONGODB CONNECTION:
 
 If you'd like to test your answer, connect to a mongo db instance as follows:
