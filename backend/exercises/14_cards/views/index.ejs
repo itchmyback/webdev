@@ -1,0 +1,19 @@
+<h1>Deck of Cards</h1>
+
+<!-- what's the difference between post and get -->
+<!-- post vs get -->
+<!-- get sends data through the URL, character limit -->
+<!-- can't send images etc -->
+<!-- don't want to send private info via URL -->
+<!-- those are the reasons you want to use post -->
+<!-- but why not use post? on the backend you would need to use a body parser -->
+<form action="/deal" method="get">
+    <button type="submit">Deal me in!!!</button>
+</form>
+
+<!-- add in cards object -->
+<% cards.forEach( element => { %>
+    <!-- accidentally used key instead of code -->
+    <%= element.code %>
+    <img src="<%= element.image %>" alt="<%= element.value %> of <%= element.suit %>" srcset="">
+<% }) %>
