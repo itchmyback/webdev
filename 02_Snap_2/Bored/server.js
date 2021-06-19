@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
 
 // app.get('/getActivity', (req, res) => {
 app.get('/activity', (req, res) => {
-    const { type, price, participants } = req.params;
+    const { type, price, participants } = req.query;
 
     // error is in here with how the params are being fed in
     const urlStr = `http://www.boredapi.com/api/activity?type=${type}&minprice=0&maxprice=${price}&participants=${participants}`;
