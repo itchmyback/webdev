@@ -24,6 +24,7 @@ console.log(bro2);
 // undefined
 
 // destructuring call
+// require('./data.js') => {data, value}
 const {data} = require('./data.js');
 console.log(data);
 // printing data prints out the destructured value 
