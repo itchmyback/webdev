@@ -227,3 +227,31 @@ jubei();
 // constants and primitives
 // primitives copy by value
 // objects copy by reference
+
+
+// return statement
+function test0() {
+    return
+        { 'hello there' }
+}
+console.log( test0() );
+
+function test1() {
+    return;
+        ( 'hello there' )
+}
+console.log( test1() );
+
+function test2() {
+    return
+        ( 'hello there' )
+}
+console.log( test2() );
+
+// initialized values
+function adder( a = 1, b = 2 ) {
+    return a + b;
+}
+
+adder();
+adder( 10, 20 );
