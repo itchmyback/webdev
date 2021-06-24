@@ -1,4 +1,5 @@
 // MAP transforms array 
+// like foreach over arrays
 var numbers = [4, 9, 16, 25];
 var squareRoots = numbers.map(Math.sqrt);
 
@@ -12,6 +13,14 @@ var multiply = numbers.map(function(el){
     return 5 * el;
 });
 
+function incrementByOne( element ) {
+    return element + 1;
+}
+
+myArray = [ 1, 2, 3, 4];
+
+myArray.map( incrementByOne );
+// [ 2, 3, 4 ,5 ]
 
 // FILTER - creates a new array, filled with array elements that pass a conditional
 // does not change original array
