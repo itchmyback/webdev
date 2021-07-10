@@ -19,18 +19,24 @@ app.get('/', (req, res) => {
 
 const endpoint = 'https://dog.ceo/api/breeds/image/random';
 
-app.get('getImage', (req,res) => {
+// app.get('getImage', (req,res) => {
+app.get('/getImage', (req,res) => {
     // fetch is front-end js, so we will install node-fetch
-    $fetch(endpoint); // go to the endpoint
+    $fetch(endpoint) // go to the endpoint
     .then(response => { // if ok - this json (string)
         if(response.ok) {
             return response.json(); // parse the string
         }
 //        throw Error("Rasheedat broke it!!!!")
         // create an error.js
-        res.render('error', {error: "Something doggone funny happened!"});
+        // res.render('error', {error: "Something doggone funny happened!"});
     })  
-
+	.then( ( data ) => {
+		res.render( 'index', { image: data.message } );
+	})
+	.catch( err => {
+        res.render('error', { error: "Something doggone funny happened!" } );
+	})
 })
 
 app.listeners

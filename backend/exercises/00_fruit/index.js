@@ -14,7 +14,8 @@ app.get("/fruits", (req, res) => {
 });
 
 // variable path with colon
-app.get("/fruits:fruits", (req, res) => {
+// app.get("/fruits:fruits", (req, res) => {
+app.get("/fruits/:fruit", (req, res) => {
 	// req and res are parameters of type object
 	// params is the value of type object for the req object
 	// fruit is the value of the params object
