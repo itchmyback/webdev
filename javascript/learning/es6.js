@@ -150,20 +150,55 @@ console.log(first); // Austin
 console.log(second); // Houston
 console.log(third); // Dallas
 
+
+// More on Fat Arrow
+// arg has no parenthesis
+// There's {} around body, but there's no code other than return statement
 var double = arg => {
     return 2 + arg;
 };
 
 console.log(double(6));
+// 8
 
-// don't need return if replace {} with ()
+// Don't need return if replace {} with ()
+// Or, if there is only a return statement, can replace {} with () and leave out return
 var double = arg => (
    2 + arg
 );
 
 console.log(double(6));
+// 8
 
+// However, the return statement cannot be left out if {} are used
 var double = arg => {
    2 + arg
 };
+
 console.log(double(6));
+// undefined
+
+// Can even do a 1-liner
+var double = arg => 2 + arg;
+
+console.log( double( 6 ) );
+// 8
+
+// Again, the situation with curly braces would be if code other than the return statement needs to be executed
+var double = ( arg ) => {
+   console.log( "Hi" );
+   return 2 + arg
+};
+console.log(double(6));
+// Hi
+// 8
+
+// seriously though who thought this notation was a good idea
+var double = ( arg ) => ( arg );
+console.log( double( 99 ) );
+// 99
+
+// so, holy crap, the parenthesis to remove the return is actually based on some sort of
+// escape mechanism
+// https://stackoverflow.com/questions/58333992/what-do-parenthesis-surrounding-brackets-in-the-return-statement-of-an-es6-arrow
+// put an example here later
