@@ -1,0 +1,73 @@
+/*
+Write a JavaScript function that reverses a number.
+For example, x = 32243;
+Expected Output : 34223;
+*/
+
+
+// js function
+// reverse means take characters and output them in reverse order
+// function take an argument
+// will require string manipulation
+// assume console log
+// used arrays to reverse
+// output should not be an array
+// it should be a number again
+
+function reversenum( number ) {
+//     console.log( number );
+    // confirm if string
+//    console.log(number.toString());
+
+    // what will be string manipulation
+    // try putting string into array of characters
+    // then reverse the array
+    // assume number argument will be cast as string with split method
+
+    let output = number.toString().split("");
+//    console.log (output);
+    // output is ["1000"]
+    /*
+    for (let i = 0; i < output.length; i++ ) {
+       console.log( output[i]);
+    }
+    */
+    // could have checked array size, but for loop prints 1 element
+    // tried correcting split syntax and that worked
+
+    // properly split number agument into array of chararcters
+    // now reverse array
+    // believe array method will do this
+    // but will try with reverse for loop
+//    console.log ( output.reverse() );
+    
+    // not sure why this didn't work
+/*
+    for (let i = output.length; i < 0; i-- ) {
+        // check on loop printing
+        console.log(i);
+//        console.log( output[i]);
+    }
+    */
+   
+    // use two step conversion
+    // array to string
+    // string ot number
+
+    let finaloutput = output.reverse().toString();
+//    let finalnumber = finaloutput.toNumber();
+    let finalnumber = parseInt( finaloutput );
+    console.log(finalnumber);
+}
+
+reversenum( 32243 );
+
+// could have used opposite of split => join
+/*
+let num = 12345
+num = Number(num.toString().split(‘’).reverse().join(‘’))console.log(num)
+console.log(typeof(num))
+*/
+
+// look up parseInt
+// for mix of number and string arguments
