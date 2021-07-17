@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>React Intro</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles.css">
+        <!-- react -->
+        <script src="https://unpkg.com/react@16.0.0-rc.2/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@16.0.0-rc.2/umd/react-dom.development.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- shadowDOM: DOM in memory, faster -->
+        <!-- React: tracks changes in the shadow DOM and passes them to ReactDOM -->
+        <!-- ReactDOM: converts changes to browser DOM -->
+        <p>Hello World!</p>
+        <div id="app"></div>
+        <!-- script type="text/javascript"></script> -->
+        <!-- this is where React happens -->
+        <script type="text/babel">
+            class FeelingsList extends React.Component {
+                render() {
+                    const theStyles = { fontSize: "24px" };
+                    return(
+                        <ul style={ theStyles }>
+                            <li>Happy</li>
+                            <li>Sad</li>
+                        </ul>
+                    );
+                }
+            }
+
+            class Garfield extends React.Component {
+                // rendering: react => something => something
+                render() {
+                    // can add styling here, where value is object with key as camelCase
+                    const theStyles = { fontSize: "24px" };
+                    return(
+                        <div className="theimage">
+                            <h1 className="name">Life</h1>
+                            <img src="https://i.imgur.com/F67Eq7J.jpeg"></img>
+                            <h3>How does he feel?</h3>
+                            <FeelingsList />
+                        </div>
+                    ) // comment
+                } // end render
+            }  // end class Garfield
+            // add this line of code before closing script tag
+            ReactDOM.render( <Garfield />, document.getElementById( "app" ));
+        </script>
+
+        <!-- <script src=""></script> -->
+    </body>
+</html>

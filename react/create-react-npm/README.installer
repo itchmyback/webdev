@@ -1,0 +1,8 @@
+# npx create-react-app <project_name>
+# does it install git files?
+# not if the project is already inside a git repository
+
+# files which contain the project name
+./package.json
+./package-lock.json
+./node_modules/.package-lock.json

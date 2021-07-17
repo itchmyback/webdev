@@ -1,0 +1,54 @@
+import React, { Component } from 'react';
+import logo from './logo.svg';
+import './App.css';
+// first time importing fake data?
+import movies from './fakedata';
+
+class App extends Component {
+	// state
+	constructor( props ) {
+		super( props );
+		this.state = {};
+
+		let movieRows = [];
+//		let movies = [1, 2, 3];
+//		movies.forEach( ( movie ) => console.log ( movie ));
+		movies.forEach( ( movie ) => {
+			const movieRow = (
+				<div key={ movie.id }>
+					<img alt="poster" src={ movie.poster_src }></img>
+					{ movie.title }
+				</div>
+			); // parenthesis? groups multiline elements?
+		movieRows.push( movieRow );
+		});
+
+		// now change state
+		this.state = {
+			rows: movieRows
+		}
+	}
+
+	// performSearch() - don't want it to execute every time page renders,
+	// so needs to be outside render
+	performSearch( searchTerm ) {
+		const url = 'https://api.themoviedb.org/3';
+		const movieRoute = `/search/movie?api_key=${keys.tmdb_api_key}&query=${searchTerm}`;
+		const endpoint = url + movieRoute;
+		fetch( endpoint )
+		.then()
+		.then()
+		.catch()
+	}
+	// render
+	render() { return (
+		<div className="App">
+			<h1>Movie Search</h1>
+			<input type="text" placeholder="enter a movie"/>
+			{/* but where did rows come from? */}
+			{ this.state.rows }
+		</div>
+	);}
+}
+
+export default App;
