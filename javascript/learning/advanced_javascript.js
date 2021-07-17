@@ -255,3 +255,128 @@ function adder( a = 1, b = 2 ) {
 
 adder();
 adder( 10, 20 );
+
+// this 
+function myFn() {
+	console.log( this );
+	this.myVar = "ha ha!";
+}
+
+function myFn() {
+	console.log( this );
+	this.myVar = "ha ha!";
+}
+
+myFn();
+// not sure what's the point here
+
+var lunch = "burger";
+
+console.log( window.lunch );
+// burger
+
+console.log( window.lunch === lunch );
+// true
+
+console.log( window === this );
+// true
+
+var lunch = { drink: "iced tea", entree: "burger", dessert: "brownie" };
+
+console.log( this.drink );
+// ?
+
+// not sure these examples are great - but ultimately it's reference keyword to the object of interest, like Python self
+
+var name = "Johnny";
+
+var myObj = {
+	name: "my object",
+	myMethod: function() {
+		console.log( this );
+		console.log( name );
+		console.log( this.name );
+	}
+}
+
+myObj.myMethod();
+// { myObj }
+// Johnny
+// my object
+
+// He needs to contrast other scopes outside of this
+// I added a global var name = "Johnny" to illustrate
+
+
+var myObj1 = {
+	name: "my object1",
+	myMethod: function() {
+		console.log( this );
+		console.log( name );
+		console.log( this.name );
+		function myInnerMethod() {
+			console.log( this );
+		}
+	myInnerMethod();
+	}
+}
+
+myObj1.myMethod();
+// { myObj1 }
+// Johnny
+// my object1
+// the global object // this inside a method function doesn't refer to the method's object
+
+// can get around this by 'use strict'
+
+// can also get around this with by defining this outside of the method function
+// self - wow is this python?
+
+var myObj2 = {
+	name: "my object2",
+	myMethod: function() {
+		let self = this;
+		console.log( this );
+		console.log( name );
+		console.log( this.name );
+		function myInnerMethod() {
+			null;
+			console.log( self );
+		}
+	myInnerMethod();
+	}
+}
+
+myObj2.myMethod();
+// { myObj2 }
+// Johnny
+// my object2
+// { my Obj2 }
+
+
+// bind
+// bind object method changes the definition of this 
+var raa = {
+	name: "Jon",
+	restaurant: "Arby's",
+	foodChoice: function( name, rest ) {
+		return name + " likes to eat at " + rest;
+	}
+}
+console.log( raa );
+// { raa }
+
+var rub = function( n, r ) {
+	console.log(
+		this.foodChoice( n, r )
+	)
+}
+// console.log( rub( "Cat", "TacoBell" ));
+// error
+
+rub.bind( raa )();
+// undefined likes to eat at undefined
+
+rub.bind( raa )( "Peter", "Vonish" );
+// Peter likes to eat at Vonish
+
