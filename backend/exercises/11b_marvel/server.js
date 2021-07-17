@@ -69,6 +69,7 @@ let marvelSchema = mongoose.Schema(
 		type: Boolean,
 		default: true
 	}
+	} //end Schema {} arg
 );
 
 // Need a model
@@ -122,7 +123,7 @@ let Character0 = new MarvelModel(
 // So review, what is this format?
 // this is the same as saying db.jm_users.insert(User) - in mongodb
 // So, for the collection - JM_user - will get lower cased and pluralized by mongoose - jm_users
-Product.save( (err, product) => {
+Character0.save( (err, product) => {
 	if(err) {
 		console.log("Error saving the cookie!!!");
 	} else {
@@ -140,7 +141,7 @@ Product.save( (err, product) => {
 // create() uses the model, not the object instance
 // So we could also pass in an array for multiple users
 // Model.create( {}, (x,y) => {} )
-ProductModel.create(
+MarvelModel.create(
 	{
 		name:"Sugar",
 		price: 1.99,
@@ -158,7 +159,7 @@ User.find( {}, (err, users) => {
 })
 */
 // db.jl_users.find({})
-ProductModel.find({}, (err, product) => {
+MarvelModel.find({}, (err, product) => {
 	console.log(err ? "Error reading document" : "Users found: " + product);
 })
 
