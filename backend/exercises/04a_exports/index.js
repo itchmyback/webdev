@@ -6,14 +6,21 @@ const app = express();
 
 app.set('view engine', "ejs");
 
-// EXPORTS/IMPORTS
+// EXPORTS/IMPORTS and Object Destructure
 
 // regular variable declaration
 const bro1 = "sup bro";
 
-// export variable from file, export is a node method
+// export OBJECT (not variable) from file, export is a node method
+// exports.key = value
+// NOTE: The export Object has no variable identifier yet, sort of just floating in memory
+// No variable, linked to a module file
+// It is read into a variable during import
+
 // data.js has a variable exports.data = "Yo man what's up!"
-// exporting variable comes out as object
+// Exporting variable comes out as object
+// Again, exports looks like a variable declartion but it's not
+// The equal sign is deceiving but exports.key = value
 const bro2 = require('./data.js');
 console.log(bro2);
 // printing bro2 prints out an object
@@ -22,6 +29,7 @@ console.log(bro2);
 // const {bro3} = require('./data.js');
 // console.log(bro3);
 // undefined
+// because { undefined_key } = undefined
 
 // destructuring call
 // require('./data.js') => {data, value}
@@ -39,7 +47,18 @@ console.log(user);
 console.log("user is " + user.getName());
 console.log("age is " + user.age);
 
-// or can deconstruct, but already been done
+// or can destructure, but already been done
+
+// One more example to drive the point home
+// info.js
+// exports.info = { info: "boo" };  // AGAIN, info is not a variable declaration, it's a key
+// module file named info with object key named info
+// object value is another object and inside that object is a key named info
+const { info } = require( './info.js' );
+console.log( info );
+// { info: ' boo ' }
+console.log( info.info );
+// boo
 
 // ROUTES
 app.get('/', (req, res) => {

@@ -1,0 +1,1 @@
+exports.info = { info: " boo " };
