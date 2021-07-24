@@ -29,10 +29,15 @@ values of each of the keys
     - egg, 
     - hello // non existent
 
+# db.animals.distinct( 'type' )
+# db.animals.distinct( 'egg' )
+# db.animals.distinct( 'hello' )
 
 ## Question B:
 
 In the above database, how would you count the number of mongo documents which contain a type "cat".
+
+# db.animals.find({ type: 'cat' }).count()
 
 
 Note: these questions may seem challenging, but are quite easy to research on the documentation and try a few
