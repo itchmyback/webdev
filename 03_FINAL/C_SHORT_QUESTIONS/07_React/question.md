@@ -10,3 +10,5 @@ It should work like this when done:
 <img src="assets/React-State-Demo.gif" width="400px">
 
 Please use short comments to show why your solution works.
+
+# https://stackoverflow.com/questions/38394015/how-to-pass-data-from-child-component-to-its-parent-in-reactjs
