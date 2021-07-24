@@ -22,8 +22,17 @@ Your task is to fix it. Here are the steps involved:
 
 If you successfully created a pull request, this task is successfully completed.
 
+# pull request submitted from itchmyback
 
 ## Git Question B:
 
 How do you delete a local branch after completing work on it.  How would you delete a remote branch?
+
+# from free code camp
+
+# delete local branch
+# git branch --delete <branchName>
+
+# delete remote branch
+# git push origin --delete <branchName>
 
