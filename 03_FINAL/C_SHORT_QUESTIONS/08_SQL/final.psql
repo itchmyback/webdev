@@ -1,0 +1,19 @@
+-- forgot about the handy vsc database explorer
+SELECT id, name, city, state
+FROM teams;
+
+SELECT *
+FROM players;
+
+-- JOINS
+-- notice the alias notation of x.xyz
+SELECT p.productid, p.description, s.saledate, s.amount
+FROM sales AS s
+JOIN products p
+ON (p.productid = s.productid);
+
+SELECT t.id, t.name, t.city, t.state, p.fname || ' ' || p.lname AS fullname, p.weight
+FROM teams AS t
+LEFT JOIN players p
+ON ( t.id = p.team_id )
+ORDER BY p.weight; 
