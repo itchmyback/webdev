@@ -27,18 +27,29 @@ const api_key = "73H9V6lKlhDik4GLmoJG2CeTj9eTRuUS";
 // Home - Trending API
 app.get( '/', ( req, res ) => {
 	// borrow API format from Search API below
-	let endpoint = 'https://api.giphy.com/v1/gifs/trending?api_key=73H9V6lKlhDik4GLmoJG2CeTj9eTRuUS&limit=1';
+	let endpoint = 'https://api.giphy.com/v1/gifs/trending?api_key=73H9V6lKlhDik4GLmoJG2CeTj9eTRuUS&limit=25';
 
 	request( endpoint, ( error, response, body ) => {
 	    if( error || response.statusCode != 200 ) {
 			res.render( 'error', { error: "ERROR" });
 		} else {
 			// borrow from Search API below
+			// IT WORKS! Now let's query 25
+			// Store in an array, so when we pass image now, it will be an array
+			// The rendered page will have to parse
 		    let gifobj = JSON.parse( body ); // use with request and needle
 			let { data } = gifobj; // would return an array of objects, data for the gif
+			/*
 			let { images } = data[0];
 			let image = images.downsized.url;
+			*/
+			let image = []; // size will be 25
+			for( let i = 0; i < data.length; i++ ) {
+				image[i] = data[i].images.downsized.url;
+				// console.log( image[i] );
+			}
 			res.render( 'home', { image });
+			// 25 image array works!
 	    }
 	}) // end request
 
@@ -68,7 +79,7 @@ app.get('/searchGiphy', ( req, res ) => {
 
 	// let endpoint = `${ baseUrl }/${ q }/&api_key=${ api_key }`;
 	// Can't get to work, so hard coding for debug
-	let endpoint = 'https://api.giphy.com/v1/gifs/search?q=chonk&api_key=73H9V6lKlhDik4GLmoJG2CeTj9eTRuUS&limit=1';
+	let endpoint = 'https://api.giphy.com/v1/gifs/search?q=chonk&api_key=73H9V6lKlhDik4GLmoJG2CeTj9eTRuUS&limit=25';
 	
 	request(endpoint, (error, response, body) => {
     // previously assumed no errors, now will handle error
@@ -89,17 +100,17 @@ app.get('/searchGiphy', ( req, res ) => {
 		// gifobj = { data: [{ images: Object }] }
 		// The url property isn't valid, so have to go even deeper to get the public url
 		let { data } = gifobj; // would return an array of objects, data for the gif
+		// Above, demonstrated query and parse of multiple URLs, so implement here
+		/*
 		let { images } = data[0];
-		console.log( images );
+//		console.log( images );
 		let image = images.downsized.url;
-		console.log( "hopefully the url string is " + image );
-
-	    // parsedData.lyrics - object dot notation - will give lyrics
-	    // then use regex to remove new lines
-	    // let data = parsedData.lyrics;
-	    // let data = parsedData.lyrics.replace(/\n/g, "<br>");
-
-//	    res.render('results', {data, artist, title});
+//		console.log( "hopefully the url string is " + image );
+		*/
+		let image = []; // size will be 25
+		for( let i = 0; i < data.length; i++ ) {
+			image[i] = data[i].images.downsized.url;
+		}
 		res.render( 'results', { image });
     } else {
       res.render('error', {error: "ERROR"});
