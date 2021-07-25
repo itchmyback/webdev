@@ -79,7 +79,8 @@ app.get('/searchGiphy', ( req, res ) => {
 
 	// let endpoint = `${ baseUrl }/${ q }/&api_key=${ api_key }`;
 	// Can't get to work, so hard coding for debug
-	let endpoint = 'https://api.giphy.com/v1/gifs/search?q=chonk&api_key=73H9V6lKlhDik4GLmoJG2CeTj9eTRuUS&limit=25';
+	// let endpoint = 'https://api.giphy.com/v1/gifs/search?q=chonk&api_key=73H9V6lKlhDik4GLmoJG2CeTj9eTRuUS&limit=25';
+	let endpoint = 'https://api.giphy.com/v1/gifs/search?q=`${q}`&api_key=73H9V6lKlhDik4GLmoJG2CeTj9eTRuUS&limit=25';
 	
 	request(endpoint, (error, response, body) => {
     // previously assumed no errors, now will handle error
