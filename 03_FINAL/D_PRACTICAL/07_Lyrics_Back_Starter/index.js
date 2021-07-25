@@ -57,12 +57,22 @@ app.get('/getGiphy', ( req, res ) => {
 	    // return response.json()
 	    let gifobj = JSON.parse(body); // use with request and needle
 	    console.log(gifobj); // make sure it's okay
+		/*
 		// gifobj = { data: [{}] }
 		// Want to get url which is buried inside gifobj
 		let { data } = gifobj; // would return an array of objects, data for the gif
 		let myurl = data[0].url;
 		console.log( "hopefully the url string is " + myurl );
-		
+		// success!
+		// NO, this url is not usable, have to get a publicly accessible url
+		*/
+		// gifobj = { data: [{ images: Object }] }
+		// The url property isn't valid, so have to go even deeper to get the public url
+		let { data } = gifobj; // would return an array of objects, data for the gif
+		let { images } = data[0];
+		console.log( images );
+		let image = images.downsized.url;
+		console.log( "hopefully the url string is " + image );
 
 	    // parsedData.lyrics - object dot notation - will give lyrics
 	    // then use regex to remove new lines
@@ -70,7 +80,7 @@ app.get('/getGiphy', ( req, res ) => {
 	    // let data = parsedData.lyrics.replace(/\n/g, "<br>");
 
 //	    res.render('results', {data, artist, title});
-		res.render( 'results', { data });
+		res.render( 'results', { image });
     } else {
       res.render('error', {error: "ERROR"});
     }
