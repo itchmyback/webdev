@@ -13,7 +13,7 @@ function ezStringCompare( str0, str1 ) {
 	let mismatch = 0
 	let wall0 = str0.replace( /\s/g, "" ); // split out white space (with regex "\s") to be more forgiving in string comparison
 	let wall1 = str1.replace( /\s/g, "" ); // also do all whitespace in a row with regex switch "g"
-
+		console.log(wall0, "and...", wall1)
 	// now split spaceless string into char array
 	let arr0 = wall0.split( "" );
 	let arr1 = wall1.split( "" );
@@ -58,6 +58,7 @@ function ezStringCompare( str0, str1 ) {
 	return mismatch;
 } // end ezStringCompare()
 
-ezStringCompare( test0, test1 );
-ezStringCompare( test1, test2 );
-ezStringCompare( test0, test2 );
+//ezStringCompare( test0, test1 );
+//ezStringCompare( test1, test2 );
+//ezStringCompare( test0, test2 );
+ezStringCompare( "This is a string", "There was string" );
