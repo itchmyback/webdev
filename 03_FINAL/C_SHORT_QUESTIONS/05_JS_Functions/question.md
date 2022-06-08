@@ -24,3 +24,12 @@ Give it a try.
 # As an example, a single extra space in otherwise identical strings would throw the rest of the comparisons off.
 #
 # So for this solution, all white spaces will be removed.
+
+
+## Feedback
+***
+
+Partial
+.75
+In the test example given we are counting the spaces.
+When using the text example on yours it gives me 10 differences. 

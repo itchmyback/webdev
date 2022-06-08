@@ -36,3 +36,8 @@ How do you delete a local branch after completing work on it.  How would you del
 # delete remote branch
 # git push origin --delete <branchName>
 
+## Feedback
+***
+
+* A. - Correct
+* B. - Correct
