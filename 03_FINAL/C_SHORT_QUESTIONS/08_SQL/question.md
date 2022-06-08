@@ -39,10 +39,3 @@ The output may look something like this. Some intermediate rows have been remove
 ```
 
 
-## Feedback
-***
-.95/1
-
-Very close!
-The only thing is that you did order by ASC rather than DESC
-

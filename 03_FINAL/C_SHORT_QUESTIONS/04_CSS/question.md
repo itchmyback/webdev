@@ -15,11 +15,3 @@ The following questions have equal weightage. The 2nd question has a choice. Eac
 # 1. re-position the content off the screen, still technically present but not visually on the screen
 # 2. CSS clip - hide anything that doesn't fit into a 1-pixel area
 # 3. text-indent - indent text off of screen
-
-
-## Feedback
-***
-
-* 1. - Correct
-* 2. - Correct
-* 3. - Correct

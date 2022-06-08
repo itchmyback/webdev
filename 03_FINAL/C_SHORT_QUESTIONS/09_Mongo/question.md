@@ -42,10 +42,3 @@ In the above database, how would you count the number of mongo documents which c
 
 Note: these questions may seem challenging, but are quite easy to research on the documentation and try a few
 examples you may see online till you get an expected response. Git it a "Play". 
-
-
-
-## Feedback
-***
-* A. - Correct!
-* B. - Correct!

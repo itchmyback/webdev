@@ -12,10 +12,3 @@ It should work like this when done:
 Please use short comments to show why your solution works.
 
 # https://stackoverflow.com/questions/38394015/how-to-pass-data-from-child-component-to-its-parent-in-reactjs
-
-
-
-## Feedback
-***
-.9/1
-Code works if the following is taken out --- 	if( !event.target.value ) 

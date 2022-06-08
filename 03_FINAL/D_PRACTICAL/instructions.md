@@ -32,11 +32,3 @@ Using their API build a small web app which does the following:
 3. Display only a manageable number of giphs on a page. How about 25 giphs per page?
 
 3. Nice-to-have feature: at the bottom of the results, put a ‘Load more’ button, which gets more gifs using that same searched term. Look at how to do pagination on the API docs.
-
-
-
-## Feedback
-***
-
-30%
-Great use of commenting and able to display 25 trending

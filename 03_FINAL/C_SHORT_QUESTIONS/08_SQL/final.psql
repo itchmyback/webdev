@@ -1,14 +1,7 @@
 -- forgot about the handy vsc database explorer
 
-SELECT 
-t.id, 
-t.name, 
-t.city, 
-t.state, 
-p.fname || ' ' || p.lname AS fullname,
-p.weight,
-CASE WHEN
- p.weight > 200 THEN 'Heavy'
+SELECT t.id, t.name, t.city, t.state, p.fname || ' ' || p.lname AS fullname, p.weight,
+CASE WHEN p.weight > 200 THEN 'Heavy'
 ELSE 'Medium'
 END AS Weight
 FROM teams AS t

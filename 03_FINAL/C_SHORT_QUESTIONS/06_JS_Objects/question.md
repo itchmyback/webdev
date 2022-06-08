@@ -32,10 +32,3 @@ Why does this comparison return false?  Please explain.
 # Their object properties are the same, but the objects themselves are different.
 # Comparing the two objects, in a simplified way, compares their memory location
 # and because they are not the same object, returns false.
-
-
-
-## Feedback
-***
-* 1. - Correct
-* 2. - Correct
