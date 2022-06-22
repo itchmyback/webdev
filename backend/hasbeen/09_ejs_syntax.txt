@@ -1,0 +1,11 @@
+Embedded JavaScript is a templating language that allows JavaScript to render HTML via JavaScript XML (JSX) on the backend.
+Among other things, this allows for dynamic rendering of content.
+
+ejs package does not need a require statement
+
+ejs files must be placed in a directory called "views"
+
+css files are usually placed in a directory called "public"
+question - we've send response get rendered with in place html tags? but manual process?
+
+syntax: enclose javascript statements inside <>

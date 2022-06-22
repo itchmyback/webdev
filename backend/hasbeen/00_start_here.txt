@@ -1,0 +1,17 @@
+backend packages using Express in node.js environment
+
+npm (a part of node.js) will install Express and other Modules
+
+npm init (to get the package ready)
+
+# npm i (or npm install) to install, fresh or whatever is listed in package.json
+npm i express
+# older version of package
+npm i express@1.2.0
+
+# execute file name with node
+node <file_name.js>
+
+starts service on localhost:<port>
+
+control-c to stop service

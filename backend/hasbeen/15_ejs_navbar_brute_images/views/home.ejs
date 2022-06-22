@@ -1,0 +1,55 @@
+<%- include('partials/header') %>
+<%- include('partials/navbar') %>
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <h1 class='text-center mt-5'>HOME</h1>
+            <!-- are these supposed to be end divs? -->
+            <div>
+          <div>
+<%- include('partials/footer') %>
+
+<!-- Below are div definitions, but they are not in the body? -->
+    <!-- Doesnt matter, with ejs, they can just be rendered -->
+          <!-- recall: with bootstrap, for a row, it takes up 12 columns -->
+          <!-- the 4 images don't fit in the row -->
+          <!-- what can we do? -->
+<div class="row">
+
+    <div class="col">
+        <div class="img_container">
+            <!-- <img src="assets/images/breakfast1.jpg" alt="frontend"> -->
+            <img src="assets/images/pbj.jpg" alt="frontend">
+        </div>
+        <a href="http://www.costco.com" target="_blank">
+            <!-- mt = margin top, mb = margin bottom -->
+            <h2 class='text-center' mt-3 mb-5>Front End Projects</h2>
+        </a>
+    </div>
+    <div class="col">
+        <div class="img_container">
+            <img src="assets/images/breakfast2.jpg" alt="frontend">
+        </div>
+        <a href="http://www.costco.com" target="_blank">
+            <h2 class='text-center' mt-3 mb-5>Back End Projects</h2>
+        </a>
+    </div>
+    <div class="col">
+        <div class="img_container">
+            <img src="assets/images/breakfast3.jpg" alt="frontend">
+        </div>
+        <a href="http://www.costco.com" target="_blank">
+            <h2 class='text-center' mt-3 mb-5>Middle End Projects</h2>
+        </a>
+    </div>
+   <div class="col">
+        <div class="img_container">
+            <img src="assets/images/breakfast4.jpg" alt="frontend">
+        </div>
+        <a href="http://www.costco.com" target="_blank">
+          <h2 class='text-center' mt-3 mb-5>Dead End Projects</h2>
+        </a>
+    </div>
+</div> <!-- end row -->
+
+<!-- lots of code, is there a better way to do this? UP NEXT -->
