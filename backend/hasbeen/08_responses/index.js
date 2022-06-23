@@ -44,7 +44,16 @@ app.get( '/console', (req, res) => {
    res.end()
 });
 
-// Pokemon Module - send processed data
+// Send more advanced data beyond strings
+
+// send html tags
+   // RECALL: standalone HTML elements can be rendered without <html>, <head>, and <body> tags per the spec
+   // Mindblowing that I went so long without knowing
+app.get('/hello', (req, res) => {
+   res.send( '<h1><strong>HELLO</strong></h1>' )
+});
+
+// Pokemon Module 
 app.get('/pokemon', (req, res) => {
   // res.send( "POKEMON GOTTA CATCH EM ALL" )
 

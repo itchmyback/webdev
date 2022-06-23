@@ -23,7 +23,8 @@ app.get( '/about', ( req, res ) => {
 	res.render( 'about.ejs' );
 });
 
-// This file will really demo how bare html elements can be rendered in ejs without an html or body tags
+// This file will demo how bare html elements can be rendered in ejs without an html or body tags.
+// Again, this is due to the HTML spec not requiring those element tags.
 app.get( '/bare_html', ( req, res ) => {
 	res.render( 'bare_html.ejs' );
 });
