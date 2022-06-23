@@ -6,7 +6,14 @@
 var people = {
     fname: "Johnny",
     lname: "Nguyen"
-}
+};
+
+// Can the value property be a variable when initializing an object? Yes!
+var thisvalue = "dude";
+
+var bros = { type: thisvalue };
+console.log( bros );
+// type: "dude"
 
 // Getting properties (key:value are properties)
 /* Dot vs Bracket notation - use the word property below, but maybe it's more accurate to say "key", because that's the only property addressed
