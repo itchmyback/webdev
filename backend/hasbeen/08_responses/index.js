@@ -2,11 +2,14 @@
 const express = require( 'express' );
 const app = express();
 
+// Built-In Path, required for res.sendFile()
+var path = require('path');
+
 // set up logger
-const logger = require('morgan');
+const logger = require( 'morgan' );
 // app.use(logger('dev'));
 
-const pokemon = require('pokemon');
+const pokemon = require( 'pokemon' );
 
 // Routes
 
@@ -39,9 +42,19 @@ app.get( '/tricked', ( req, res ) => {
 });
 
 // End - for ending without sending data
-app.get( '/console', (req, res) => {
+app.get( '/console', ( req, res ) => {
    console.log( "I am the console" )
    res.end()
+});
+
+app.get( '/nobody', (req, res ) => {
+
+   // Can't get these absolute paths to work
+//   res.sendFile( '/d/github_repos/bootcamp/webdev/backend/08_responses/nobody.html' )
+//   res.sendFile( 'D:\github_repos\bootcamp\webdev\backend\08_responses\nobody.html' )
+
+   // So using path
+   res.sendFile( path.resolve( 'nobody.html' ))
 });
 
 // Send more advanced data beyond strings
@@ -62,11 +75,14 @@ app.get('/pokemon', (req, res) => {
    for(let i = 0; i < 5; i++) {
       pokeArray.push( pokemon.random() );
    }
+
    // Using the map method, create a new array of pokemon encased in <p> tags
    let result = pokeArray.map( (el) => {
       return `<p>${ el }</p>`;
    });
+
    console.log( result );
+
    res.send( result.join('') );
 });
 
