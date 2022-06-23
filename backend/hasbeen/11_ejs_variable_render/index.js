@@ -40,6 +40,13 @@ app.get( '/johnny', ( req, res ) => {
 	// EJS - templating of HTML using JavaScript via JavaScript XML (JSX) for dynamic webpages from the backend
 })
 
+// Does this work? Yes it does! 
+app.get( '/scooty', ( req, res ) => {
+	// don't define variable, send data as is
+
+	res.render( 'johnny.ejs', { data: "Sup Bro" });
+})
+
 // LISTENER
 const port = process.env.PORT || 3000;
 app.listen( port, () => console.log( `Listening on port ${ port }` ));
