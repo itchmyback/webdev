@@ -19,10 +19,8 @@ app.get( '/', ( req, res ) => {
 // The image URL is passed in as a variable to the ejs file
 // img src="<% image %>"
 app.get( '/home', ( req, res ) => {
- res.render( 'home', { image: 'https://images.dog.ceo/breeds/bouvier/n02106382_952.jpg' })
+ res.render( 'home', { image0: 'https://images.dog.ceo/breeds/bouvier/n02106382_952.jpg', image1: 'https://www.austincc.edu/sites/default/files/components/images/20220325-HLC-Staged-Shoot-ca-581w.-imgcap-1.jpg' })
 })
-
-app.listeners
 
 // LISTENER
 port = process.env.PORT || 3000;
