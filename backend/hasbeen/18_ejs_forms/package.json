@@ -1,5 +1,5 @@
 {
-  "name": "17_dogimage",
+  "name": "18_ejs_forms",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -10,9 +10,9 @@
   "dependencies": {
     "express": "^4.17.1"
   },
-  "description": "",
   "devDependencies": {
     "ejs": "^3.1.8",
     "node-fetch": "^2.6.7"
-  }
+  },
+  "description": ""
 }

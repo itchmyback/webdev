@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>EJS Forms</title>
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <!-- form action = /getImage, it will go to this route -->
+        <!-- appends ? to end of /getImage route, should send form parameter info -->
+        <!-- method = get or post -->
+        <form class="container" action="/getImage">
+            <input id="btn" type="submit" value="Click for new Image" />
+            <h1>Not really random ACC pics</h1> 
+            <!-- ejs to form the next image -->
+            <!-- probably need to do string processing on it -->
+            <!-- this is where image gets displayed via variable -->
+
+            <% let random = Math.floor( Math.random() * 5 ) %>
+            <%# console.log( random ) %>
+            <!-- image = baseUrl.concat( random, ".jpg" ) -->
+
+            <!-- this doesn't work -->
+            <%# image = %><%#= baseUrl %>
+
+            <% image = baseUrl.concat( random, ".jpg") %>
+            <%# console.log( image ) %>
+
+            <img id="pic" src="<%= image %>" alt="ACC" />
+        </form>
+  </body>
+</html>
