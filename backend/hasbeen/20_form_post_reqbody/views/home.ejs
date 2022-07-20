@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>EJS Forms</title>
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <!-- form action = /getImage, it will go to this route -->
+        <!-- appends ? to end of /getImage route, should send form parameter info -->
+        <!-- method = get or post -->
+        <form class="container" action="/getImage" method="POST">
+            <label for="number">Enter a number:</label>
+            <input type="text" id="number" name="number" style="border: solid black 1px;">
+            <input id="btn" type="submit" value="Click for new Image" />
+        </form>
+  </body>
+</html>
